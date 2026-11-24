@@ -12,9 +12,11 @@ Pizarra táctica de fútbol: fichas, material de entrenamiento, trazos, animaci�
 ## Publicar con GitHub Pages
 
 1. Settings → Pages → Source: *Deploy from a branch* → rama `main`, carpeta `/ (root)` → Save.
-2. En 1–2 minutos:
-   - App: `https://TU-USUARIO.github.io/pizarra-tactica/`
-   - HTML suelto: `https://TU-USUARIO.github.io/pizarra-tactica/html/pizarra-tactica.html`
+2. En 1 o 2 minutos estará en:
+
+   -- App instalable: https://TU-USUARIO.github.io/pizarra-tactica-futbol/
+   
+   -- HTML suelto: https://TU-USUARIO.github.io/pizarra-tactica-futbol/html/pizarra-tactica.html
 
 ## Instalar la app
 
