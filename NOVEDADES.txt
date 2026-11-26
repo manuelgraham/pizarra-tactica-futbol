@@ -1,141 +1,92 @@
 PIZARRA TÁCTICA - NOVEDADES
 ===========================
 
-VERSIÓN 2.4
------------
-1. TRAZOS POR FOTOGRAMA
-   - Con fotogramas guardados, cada flecha nueva se ve solo en el
-     fotograma en que la dibujas (se puede desactivar en Animación).
-   - En la pestaña Ficha eliges para cada trazo: todos los fotogramas,
-     solo en el N o desde el N.
-   - Al reproducir y en el vídeo, cada flecha aparece en su momento.
 
-2. ZOOM Y GESTOS CON DOS DEDOS
-   - Zoom del campo: pellizco con dos dedos, rueda en zona vacía,
-     Ctrl + rueda o teclas + y −. Botón "Ajustar" para volver.
-   - Desplazar el campo con zoom: dos dedos, botón central o botón
-     derecho en zona vacía.
-   - Un dedo sobre una pieza y otro al lado: pellizca para cambiar el
-     tamaño y gira para cambiar el ángulo.
+VERSIÓN 1.2.0
+-------------
+1. BIBLIOTECA AMPLIADA: 17 EJERCICIOS POR CATEGORÍAS
+   - Calentamiento: pases por parejas con movilidad, circuito de
+     coordinación (escalera, vallas, picas).
+   - Técnica: rondo 4x2, rueda de pases en Y, 1 contra 1 con
+     miniporterías, pared y finalización, centro y remate.
+   - Táctica: posesión 4x4 + 2, salida de balón 6 contra 3, presión
+     tras pérdida.
+   - Físico: velocidad de reacción, intermitente 15 - 15, agilidad en T.
+   - Porteros: desplazamiento lateral y blocaje.
+   - Balón parado: córner a favor, falta lateral.
+   - Juego reducido: partido 4 contra 4 con porteros.
+   - Filtro por categoría en la pestaña Ejercicio.
 
-3. SELECCIÓN MÚLTIPLE
-   - Arrastra en una zona vacía para seleccionar con un recuadro, o usa
-     Mayús + clic para añadir o quitar piezas.
-   - Mueve el grupo arrastrando cualquiera de sus piezas o con flechas.
-   - Alinear en fila o columna, repartir a la misma distancia, peto a
-     todos, color de trazos, duplicar, bloquear y eliminar en bloque.
+2. CAMPO "TIPO" EN EL EJERCICIO
+   - Nuevo dato del ejercicio (Calentamiento, Técnica, Físico...), que
+     sale en el PDF de la ficha y en el plan de la sesión.
 
-4. COMPARTIR JUGADA POR ENLACE
-   - Archivo > Compartir por enlace. La jugada va dentro del enlace:
-     quien lo abre la ve en su pizarra, sin cuentas ni servidor.
-   - En el móvil abre el menú de compartir (WhatsApp, correo...); en el
-     PC, copiar enlace o enviar por WhatsApp.
-   - Al abrir un enlace, Deshacer devuelve tu pizarra anterior.
-
-5. PLANTILLAS DE EQUIPO
-   - Campo > Plantillas: crea plantillas con dorsal, nombre, portero y
-     titular, o cópialas de los jugadores del campo.
-   - "Aplicar al local / rival" pone dorsales y nombres en las fichas.
-   - Se incluyen en la copia de seguridad (Exportar / Importar archivo).
+Mejoras:
+   - Conos, picas, banderines y maniquíes se ven siempre de pie, también
+     con el campo en vertical.
 
 
-VERSIÓN 2 (respecto a la pizarra original)
-------------------------------------------
+VERSIÓN 1.1.0
+-------------
+1. MODO PRESENTACIÓN
+   - Botón Presentar (o tecla P): pantalla completa, sin controles.
+   - Avanza con flecha derecha, Espacio o tocando la parte derecha de la
+     pantalla; retrocede con flecha izquierda o tocando la izquierda.
+   - "Reproducir todo" pasa los fotogramas solos. Esc para salir.
 
-Diferencias principales respecto a la versión anterior.
+2. NOTAS POR FOTOGRAMA
+   - Pestaña Animación > Nota del fotograma.
+   - Se muestran al reproducir y al presentar, y salen en la imagen y en
+     el vídeo exportados, en una franja debajo del campo.
 
+3. FLECHAS NUMERADAS
+   - Botón Numerar (tecla N): los trazos nuevos se numeran 1, 2, 3...
+   - En la pestaña Ficha, número a mano para cada trazo.
+   - Con varios trazos seleccionados: "Numerar 1, 2, 3..." o "Quitar
+     números".
 
-1. PANTALLA Y USO EN MÓVIL Y TABLET
------------------------------------
-- El campo ocupa siempre todo el espacio libre; ya no comparte pantalla
-  con una barra lateral larga que había que desplazar.
-- En pantallas verticales el campo gira solo para aprovechar la pantalla
-  (también se puede fijar en horizontal o vertical).
-- Controles ordenados en 5 pestañas: Campo, Añadir, Ficha, Animación y
-  Archivo. En móvil van en una hoja inferior que se pliega para dejar
-  todo el espacio al campo.
-- Botones flotantes sobre el campo: Editar / Duplicar / Eliminar lo
-  seleccionado, y Reproducir la animación.
+4. PESTAÑA EJERCICIO Y FICHA EN PDF
+   - Datos del ejercicio: título, objetivo, duración, jugadores,
+     espacio, material, explicación y variantes.
+   - "PDF de este ejercicio": ficha en A4 con los datos, el campo con
+     todos los movimientos y, si quieres, la secuencia de fotogramas con
+     sus notas.
 
+5. SESIÓN DE ENTRENAMIENTO EN PDF
+   - Marca las jugadas guardadas que forman la sesión, en orden.
+   - Portada con título, fecha, plan de la sesión y minutos totales, y
+     una ficha por ejercicio.
 
-2. CAMPO MÁS LIMPIO
--------------------
-- Sin banquillo ni bandeja de material dibujados en el campo: las piezas
-  se añaden desde la pestaña Añadir.
-- "Medio campo" es una vista que funciona con cualquier superficie.
-- Superficies: Fútbol 11, Fútbol 7, Sala, Cuadro de posesión, Lisa y
-  Pizarra en blanco.
-- Las formaciones se adaptan a la superficie: 11 jugadores en fútbol 11,
-  7 en fútbol 7 y 5 en sala o posesión.
+6. BIBLIOTECA DE EJERCICIOS
+   - Rondo 4x2, posesión 4x4 + 2 comodines, salida de balón 6 contra 3,
+     córner a favor, presión tras pérdida y centro y remate.
+   - Cada uno trae fotogramas, flechas numeradas, notas y ficha rellena.
 
+7. VERSIÓN VISIBLE
+   - La versión aparece en Archivo y, al actualizar, se muestra un aviso
+     con las novedades.
 
-3. MÁS HERRAMIENTAS DE DIBUJO
------------------------------
-- Desmarque, Pase, Conducción, Flecha curva, Zona, Óvalo, Conectar
-  jugadores, Texto y Borrador.
-- La conducción se dibuja con línea ondulada, como en las pizarras de
-  entrenador.
-- La flecha curva se puede invertir.
-- Las zonas (rectángulo u óvalo) se dibujan al tamaño que quieras.
-- El texto se puede editar después de colocarlo.
-
-
-4. JUGADORES MÁS COMPLETOS
---------------------------
-- Nombre debajo de la ficha, además del dorsal y el peto.
-- Se puede marcar o desmarcar a cualquier jugador como portero.
-- Tamaño individual por jugador y tamaño general para todas las fichas.
-
-
-5. ANIMACIÓN MÁS PRÁCTICA
--------------------------
-- Guardar, actualizar y quitar fotogramas.
-- Velocidad (lenta, normal, rápida) y reproducción en bucle.
-- Tocar un número de fotograma te lleva a ese momento de la jugada.
-- Las conexiones entre jugadores siguen a las fichas durante la
-  animación y en el vídeo exportado.
+Mejoras:
+   - Con "Orientación automática" la pizarra elige la posición en la que
+     el campo se ve más grande (medio campo con la portería arriba en
+     pantallas anchas).
+   - En "Medio campo" ya no se ve el resto del campo por los lados.
 
 
-6. MANEJO CON RATÓN Y TECLADO
------------------------------
-- Botón derecho + arrastrar sobre una pieza o trazo:
-    en horizontal gira, en vertical cambia el tamaño
-    (con Mayús, el giro va de 15 en 15 grados).
-- Rueda del ratón: cambia el tamaño. Mayús + rueda: gira.
-- Atajos de teclado:
-    1 Mover        2 Desmarque    3 Pase        4 Conducción
-    5 Curva        6 Zona         7 Óvalo       8 Conectar
-    9 Texto        0 Borrador
-    Flechas        mover la selección (Mayús: más rápido)
-    L              bloquear / desbloquear
-    Espacio        reproducir / detener
-    Supr           eliminar la selección
-    Ctrl+Z         deshacer
-    Ctrl+Y         rehacer
-- Deshacer abarca todo: campo, equipos, trazos y fotogramas.
-
-
-7. GUARDAR Y COMPARTIR
-----------------------
-- Mis jugadas: guardar con nombre, abrir y borrar.
-- Copia de seguridad en archivo (Exportar / Importar) para llevar las
-  jugadas de un dispositivo a otro.
-- Exportar imagen PNG (descargar o copiar) y vídeo de la animación.
-- La imagen y el vídeo muestran solo el campo, sin paneles ni bandejas.
-
-
-8. INSTALABLE COMO APP
-----------------------
-- Se instala con su icono en PC, Android, iPhone y iPad desde la web de
-  GitHub Pages, y funciona sin internet.
-- Se mantiene también la versión HTML de un solo archivo para abrir con
-  doble clic.
-
-
-9. ASPECTO
-----------
-- Diseño renovado con modo claro y oscuro.
-- Balón clásico de pentágonos y todo el material dibujado con el mismo
-  estilo.
-- Nombres de los equipos sobre el campo, con opción de ocultarlos.
-- Vista 3D en perspectiva con inclinación ajustable.
+VERSIÓN 1.0.0 - primera versión publicada
+-----------------------------------------
+- Campos: fútbol 11, fútbol 7, sala, cuadro de posesión, pizarra lisa y
+  en blanco; campo entero o medio campo; horizontal o vertical; vista 3D.
+- Equipos: formaciones para 11, 7 y 5 jugadores, colores, nombres,
+  petos, porteros y plantillas con dorsales y nombres.
+- Material: balones, conos, platos, picas, vallas, aros, escalera,
+  maniquí, banderín, rebotador, porterías y entrenador.
+- Dibujo: desmarque, pase, conducción, flecha curva, zonas, conexiones
+  entre jugadores y texto.
+- Edición: selección múltiple, alinear y repartir, girar y cambiar el
+  tamaño (botón derecho, rueda o dos dedos), bloquear, duplicar,
+  deshacer y rehacer.
+- Zoom: pellizco con dos dedos, rueda o teclas + y -.
+- Animación por fotogramas: cada flecha aparece en su momento; vídeo.
+- Compartir: jugada por enlace, imagen PNG y copia de seguridad.
+- App instalable que funciona sin conexión.

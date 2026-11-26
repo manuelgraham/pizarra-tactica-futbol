@@ -25,7 +25,7 @@ Pizarra táctica de fútbol: fichas, material de entrenamiento, trazos, animaci�
 ## Actualizar
 
 1. Sustituye `index.html` y `html/pizarra-tactica.html` (son la misma pizarra; la de la raíz solo añade lo necesario para instalarse).
-2. Sube el número de `VERSION` en `sw.js` (p. ej. `pizarra-v2-2` → `pizarra-v2-3`).
+2. Cambia `VERSION` en `sw.js` y `APP_VERSION` en los dos `.html` al número de la nueva versión (p. ej. `1.1.0` → `1.1.1`).
 3. Commit y push. Los dispositivos con la app instalada se actualizan al abrirla con conexión.
 
 ## Datos
@@ -35,10 +35,19 @@ Las jugadas se guardan en el navegador de cada dispositivo. Para llevarlas a otr
 ## Uso rápido
 
 - **Herramientas:** 1 Mover · 2 Desmarque · 3 Pase · 4 Conducción · 5 Curva · 6 Zona · 7 Óvalo · 8 Conectar · 9 Texto · 0 Borrar
-- **Selección múltiple:** arrastra en una zona vacía (recuadro) o Mayús + clic. Arrastra una pieza seleccionada para mover el grupo; en la pestaña Ficha: alinear, repartir, petos, color, duplicar, bloquear, eliminar.
-- **Zoom:** rueda en zona vacía, Ctrl + rueda, teclas + / −, o pellizco con dos dedos. Desplazar: botón central, botón derecho en zona vacía o dos dedos. Botón *Ajustar* para volver.
+- **Presentar (P):** pantalla completa sin controles. Avanza con → / Espacio o tocando la parte derecha; retrocede con ← o tocando la izquierda; Esc para salir.
+- **Notas por fotograma:** pestaña Animación → *Nota del fotograma*. Se ven al reproducir, al presentar y en la imagen y el vídeo exportados.
+- **Flechas numeradas:** botón *Numerar* (N) para numerar las nuevas; en Ficha, número a mano; en selección múltiple, *Numerar 1, 2, 3…*.
+- **Ejercicio:** datos del ejercicio, *PDF de este ejercicio* (con la secuencia de fotogramas) y *PDF de la sesión* a partir de jugadas guardadas.
+- **Biblioteca (17 ejercicios por categorías):** calentamiento, técnica, táctica, físico, porteros, balón parado y juego reducido. Filtro por categoría en la pestaña Ejercicio.
+- **Selección múltiple:** arrastra en una zona vacía (recuadro) o Mayús + clic. En Ficha: alinear, repartir, petos, color, números, duplicar, bloquear, eliminar.
+- **Zoom:** rueda en zona vacía, Ctrl + rueda, teclas + / −, o pellizco con dos dedos. Desplazar: botón central, botón derecho en zona vacía o dos dedos. *Ajustar* para volver.
 - **Girar y tamaño:** botón derecho + arrastrar (horizontal gira, vertical tamaño; Mayús: pasos de 15°), rueda sobre la pieza (Mayús + rueda gira), o en táctil un dedo sobre la pieza y otro al lado.
 - **Trazos por fotograma:** con fotogramas guardados, los trazos nuevos se ven solo en el fotograma actual. En Ficha eliges *Todos*, *Solo en el N* o *Desde el N*.
-- **Compartir:** Archivo → *Compartir por enlace*. La jugada va dentro del enlace (`#j=…`); al abrirlo se carga en la pizarra.
+- **Compartir:** Archivo → *Compartir por enlace*. La jugada va dentro del enlace (`#j=…`).
 - **Plantillas:** Campo → Plantillas. Dorsal, nombre, portero y titular; *Aplicar al local / rival*.
-- **Teclado:** Ctrl+Z / Ctrl+Y deshacer y rehacer · Supr borrar · flechas mover · L bloquear · Espacio reproducir · Esc quitar selección.
+- **Teclado:** Ctrl+Z / Ctrl+Y · Supr borrar · flechas mover · L bloquear · Espacio reproducir · Esc quitar selección.
+
+## Versiones
+
+Las versiones publicadas están en **Releases**. Cada una se puede descargar por separado. La versión instalada se ve en *Archivo* (al pie).
