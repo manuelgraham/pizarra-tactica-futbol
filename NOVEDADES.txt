@@ -2,6 +2,65 @@ PIZARRA TÁCTICA - NOVEDADES
 ===========================
 
 
+VERSIÓN 1.3.0
+-------------
+1. PESTAÑA PARTIDOS
+   - Mi equipo: nombre y enlace a la página del equipo en la web de la
+     federación (botón "Abrir web").
+   - Próximo partido destacado, partidos pendientes y jugados con su
+     resultado (verde ganado, gris empate, rojo perdido).
+   - Añadir y editar partidos a mano: jornada, fecha, hora, rival, en
+     casa o fuera, campo y resultado.
+
+2. PEGAR CALENDARIO
+   - Copia el calendario de la web de la federación y pégalo: la
+     pizarra reconoce jornadas, fechas, horas, rivales, local o
+     visitante y resultados. Revisas la lista antes de importar.
+   - Al volver a pegarlo más adelante, actualiza los resultados sin
+     perder las alineaciones.
+
+3. ALINEACIÓN DE LA JORNADA
+   - Convocatoria desde tu plantilla: titulares, suplentes y no
+     convocados; modalidad (fútbol 11, 7 o sala) y sistema.
+   - Cada titular muestra su puesto (POR, DEF, MED, DEL) según el orden.
+   - Consignas para el partido.
+   - "Ver en la pizarra" coloca el once con dorsales y nombres.
+   - "PDF de la alineación" para el vestuario: campo, titulares,
+     suplentes y consignas.
+
+4. DIAPOSITIVAS DEL PARTIDO
+   - Desde cada partido (botón "Diapositivas"): imágenes listas para
+     enviar por WhatsApp o publicar.
+   - Cinco diapositivas: Día de partido (escudos, local y visitante,
+     fecha, hora, campo y dirección), Convocatoria (convocados con
+     dorsal), Citación (quedada, salida, partido, campo, dirección,
+     equipación y observaciones), Alineación (campo con el once y
+     suplentes) y Cuerpo técnico (cargo, nombre y teléfono).
+   - Tres diseños: Césped, Noche y Colores del club.
+   - Tres formatos: vertical 9:16, cuadrado 1:1 y horizontal 16:9.
+   - Compartir todas de una vez (en el móvil, con la app instalada),
+     descargar la imagen actual o todas en PDF.
+
+5. DATOS DEL CLUB
+   - Partidos > Mi equipo: competición, escudo del club y cuerpo
+     técnico (entrenador, segundo, delegado... con su teléfono).
+
+6. CITACIÓN Y VIAJE EN CADA PARTIDO
+   - Editar partido > Citación y viaje: hora y lugar de quedada, día y
+     hora de salida, dirección del campo, equipación, observaciones y
+     escudo del rival.
+
+7. VERSIÓN VISIBLE Y HISTORIAL
+   - En una esquina del campo aparece la versión actual (por ejemplo
+     "v1.3.0"). Al pulsarla se abre el historial completo de novedades,
+     desde la 1.0.0. También en Archivo > "Novedades y versiones".
+   - La etiqueta no sale en las imágenes ni en los vídeos exportados.
+
+Mejoras:
+   - La pestaña Animación pasa a llamarse "Animar" para que quepan las
+     siete pestañas.
+
+
 VERSIÓN 1.2.0
 -------------
 1. BIBLIOTECA AMPLIADA: 17 EJERCICIOS POR CATEGORÍAS

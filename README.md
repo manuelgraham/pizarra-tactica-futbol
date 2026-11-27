@@ -39,6 +39,8 @@ Las jugadas se guardan en el navegador de cada dispositivo. Para llevarlas a otr
 - **Notas por fotograma:** pestaña Animación → *Nota del fotograma*. Se ven al reproducir, al presentar y en la imagen y el vídeo exportados.
 - **Flechas numeradas:** botón *Numerar* (N) para numerar las nuevas; en Ficha, número a mano; en selección múltiple, *Numerar 1, 2, 3…*.
 - **Ejercicio:** datos del ejercicio, *PDF de este ejercicio* (con la secuencia de fotogramas) y *PDF de la sesión* a partir de jugadas guardadas.
+- **Partidos:** tu calendario (a mano o *Pegar calendario* copiado de la web de la federación), próximo partido, resultados y **alineación de la jornada** con titulares, suplentes, sistema y consignas: verla en la pizarra o sacar el PDF.
+- **Diapositivas del partido:** desde Partidos › *Diapositivas*: día de partido, convocatoria, citación, alineación y cuerpo técnico; 3 diseños y 3 formatos; compartir (WhatsApp), imagen o PDF. Los datos del club (escudo, competición, cuerpo técnico) están en Partidos › Mi equipo y la citación en *Editar partido*.
 - **Biblioteca (17 ejercicios por categorías):** calentamiento, técnica, táctica, físico, porteros, balón parado y juego reducido. Filtro por categoría en la pestaña Ejercicio.
 - **Selección múltiple:** arrastra en una zona vacía (recuadro) o Mayús + clic. En Ficha: alinear, repartir, petos, color, números, duplicar, bloquear, eliminar.
 - **Zoom:** rueda en zona vacía, Ctrl + rueda, teclas + / −, o pellizco con dos dedos. Desplazar: botón central, botón derecho en zona vacía o dos dedos. *Ajustar* para volver.

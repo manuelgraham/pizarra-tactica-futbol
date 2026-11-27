@@ -26,12 +26,12 @@ button svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke
 .prim{background:var(--acc);border-color:var(--acc);color:#fff}
 .danger{color:var(--acc)}
 textarea{font:inherit;font-size:16px;color:var(--ink);border:1px solid var(--line);border-radius:10px;background:var(--soft);padding:8px 10px;width:100%;resize:vertical}
-input[type=text],input[type=number],input[type=date],select{min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--soft);padding:0 10px;font-size:16px;width:100%}
+input[type=text],input[type=number],input[type=date],input[type=time],select{min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--soft);padding:0 10px;font-size:16px;width:100%}
 input[type=color]{width:44px;height:44px;border:1px solid var(--line);border-radius:10px;padding:3px;background:var(--soft)}
 input[type=range]{width:100%;accent-color:var(--acc);height:32px}
 [hidden]{display:none!important}
 
-.app{position:fixed;inset:0;display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:auto minmax(0,1fr);grid-template-areas:"top top" "stage panel";padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);background:var(--panel)}
+.app{position:fixed;inset:0;display:grid;grid-template-columns:minmax(0,1fr) 370px;grid-template-rows:auto minmax(0,1fr);grid-template-areas:"top top" "stage panel";padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);background:var(--panel)}
 .top{grid-area:top;display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--line)}
 .brand{font:800 22px/1 "Saira Condensed",sans-serif;padding:0 6px;white-space:nowrap}
 .tools{display:flex;align-items:center;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none;padding:2px}
@@ -60,7 +60,7 @@ body.playing #fPlay{pointer-events:auto;opacity:1;background:var(--acc);border-c
 
 .panel{grid-area:panel;display:flex;flex-direction:column;border-left:1px solid var(--line);min-height:0}
 .tabs{display:flex;border-bottom:1px solid var(--line);flex:none}
-.tab{flex:1;min-height:56px;border:0;border-radius:0;flex-direction:column;gap:2px;font-size:12px;font-weight:600;color:var(--mute);background:none;padding:4px 2px;position:relative}
+.tab{flex:1;min-height:56px;border:0;border-radius:0;flex-direction:column;gap:2px;font-size:11.5px;font-weight:600;color:var(--mute);background:none;padding:4px 2px;position:relative}
 .tab[aria-selected=true]{color:var(--acc);box-shadow:inset 0 -3px 0 var(--acc)}
 .tab.dot::after{content:"";position:absolute;top:8px;right:calc(50% - 18px);width:8px;height:8px;border-radius:50%;background:var(--sel)}
 .sheet{flex:1;overflow:auto;padding:14px;overscroll-behavior:contain;min-height:0}
@@ -96,7 +96,10 @@ body.playing #fPlay{pointer-events:auto;opacity:1;background:var(--acc);border-c
 #toast.on{opacity:1;transform:translate(-50%,0)}
 
 a.btn{text-decoration:none}
-.float.zb{left:10px;bottom:10px;padding:0 14px;min-height:44px;font-weight:700}
+.float.ver{left:10px;bottom:10px;min-height:32px;padding:0 10px;border-radius:999px;font:700 13px/1 Barlow,sans-serif;gap:6px;opacity:.85;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.float.ver:hover{opacity:1}
+.float.ver svg{width:16px;height:16px}
+.float.zb{left:10px;bottom:52px;padding:0 14px;min-height:44px;font-weight:700}
 .modal>div{max-height:92vh;overflow:auto}
 .rrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:6px 0;border-top:1px solid var(--line)}
 .rrow input[type=text]{width:auto}.rrow [data-f=n]{flex:0 0 64px}.rrow [data-f=name]{flex:1 1 150px}
@@ -111,10 +114,25 @@ body.playing #fab{bottom:auto;top:10px}
 .float.pres.idle{opacity:0;pointer-events:none}
 .float.pres b{font:700 18px/1 "Saira Condensed",sans-serif;padding:0 8px;white-space:nowrap}
 body.present .app{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);grid-template-areas:"stage"}
-body.present .top,body.present .panel,body.present #selbar,body.present #fab,body.present #zoomBtn{display:none!important}
+body.present .top,body.present .panel,body.present #selbar,body.present #fab,body.present #zoomBtn,body.present #verBtn{display:none!important}
+body.playing #verBtn{display:none}
+.chl details{border-top:1px solid var(--line);padding:8px 0}.chl summary{cursor:pointer;font:800 20px/1.2 'Saira Condensed',sans-serif;list-style-position:inside}
+.chl summary small{font:600 13px Barlow,sans-serif;color:var(--mute);margin-left:8px}
+.chl ul{margin:8px 0 2px;padding-left:20px;display:grid;gap:6px}
 .ses{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;padding:6px 0;border-top:1px solid var(--line);cursor:pointer}
 .ses input{width:22px;height:22px;accent-color:var(--acc)}.ses b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ses small{color:var(--mute)}
 .ses i{font:700 18px/1 "Saira Condensed",sans-serif;color:var(--acc);font-style:normal;min-width:20px;text-align:right}
+.mcard{border:2px solid var(--acc);border-radius:14px;padding:12px 14px;display:grid;gap:4px}
+.mcard .big{font:800 24px/1.1 "Saira Condensed",sans-serif}.mcard .row{margin-top:6px}
+.mrow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.mrow>.row{grid-column:2/4}.mrow>.row button{min-height:38px;padding:0 11px;font-size:14px}
+.mrow .j{font:700 17px/1 "Saira Condensed",sans-serif;color:var(--mute);min-width:30px}
+.mrow b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mrow small{color:var(--mute)}
+.res{font:800 18px/1 "Saira Condensed",sans-serif;padding:4px 8px;border-radius:8px;background:var(--soft);white-space:nowrap}
+.res.w{background:#16a34a;color:#fff}.res.l{background:#dc2626;color:#fff}.res.d{background:#a3a3a3;color:#111}
+.luSt{display:flex;gap:4px}.luSt button{min-height:40px;padding:0 9px;font-size:13px}.luSt button[aria-pressed=true]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.slot{font:700 15px/1 "Saira Condensed",sans-serif;color:var(--acc);min-width:34px}
+.imprev{width:100%;border-collapse:collapse;font-size:14px}.imprev td{padding:4px 6px;border-top:1px solid var(--line)}
 @media (min-width:1360px){.tb span{display:inline}}
 /* Móvil y tablet en vertical: hoja inferior */
 @media (max-width:599px),(max-width:899px) and (min-height:561px){
@@ -127,6 +145,7 @@ body.present .top,body.present .panel,body.present #selbar,body.present #fab,bod
   .panel.closed .tab{color:var(--mute);box-shadow:none}
   .brand{display:none}
   .tb{padding:0 9px}
+  .tab{font-size:11px}
 }
 /* Móvil en horizontal: panel lateral estrecho */
 @media (max-height:560px) and (min-width:600px){
@@ -179,6 +198,7 @@ body.present .top,body.present .panel,body.present #selbar,body.present #fab,bod
       <button id="pPlay">Reproducir todo</button>
       <button id="pExit">Salir</button>
     </div>
+    <button id="verBtn" class="float ver" title="Versión y novedades"><svg viewBox="0 0 24 24"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg><span id="verTxt"></span></button>
     <button id="zoomBtn" class="float zb" hidden>Ajustar</button>
     <div class="float selbar" id="selbar" hidden>
       <b id="sbN" hidden style="padding:0 6px;white-space:nowrap"></b>
@@ -195,8 +215,9 @@ body.present .top,body.present .panel,body.present #selbar,body.present #fab,bod
       <button class="tab" role="tab" data-tab="campo" aria-selected="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.5"/></svg>Campo</button>
       <button class="tab" role="tab" data-tab="add" aria-selected="false"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Añadir</button>
       <button class="tab" role="tab" data-tab="sel" id="tabSel" aria-selected="false"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>Ficha</button>
-      <button class="tab" role="tab" data-tab="anim" aria-selected="false"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg>Animación</button>
+      <button class="tab" role="tab" data-tab="anim" aria-selected="false"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg>Animar</button>
       <button class="tab" role="tab" data-tab="ex" aria-selected="false"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M8.5 10h7M8.5 14h7M8.5 18h4"/></svg>Ejercicio</button>
+      <button class="tab" role="tab" data-tab="team" aria-selected="false"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="12" cy="15.5" r="2.2"/></svg>Partidos</button>
       <button class="tab" role="tab" data-tab="file" aria-selected="false"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Archivo</button>
     </div>
     <div class="sheet">
@@ -262,6 +283,21 @@ body.present .top,body.present .panel,body.present #selbar,body.present #fab,bod
           <p class="hint" style="margin-top:6px">Ábrelos, adáptalos a tu equipo y guárdalos en Mis jugadas. Deshacer vuelve a tu pizarra.</p></div>
       </section>
 
+      <section class="pane" data-pane="team">
+        <div><p class="lbl">Mi equipo</p>
+          <input type="text" id="tmName" maxlength="60" placeholder="Nombre de tu equipo" aria-label="Nombre de tu equipo">
+          <div class="row" style="margin-top:8px"><input type="text" id="tmUrl" inputmode="url" placeholder="Dirección de tu equipo en la web de la federación" aria-label="Dirección de tu equipo en la web de la federación"><a class="btn" id="tmOpen" target="_blank" rel="noopener">Abrir web</a></div>
+          <input type="text" id="clComp" maxlength="60" placeholder="Competición (ej.: 2.ª Alevín · Grupo 3)" aria-label="Competición" style="margin-top:8px">
+          <div class="row" style="margin-top:8px"><img id="clLogoP" alt="Escudo del club" width="44" height="44" style="border-radius:50%;background:#fff;object-fit:contain;border:1px solid var(--line)" hidden><label class="btn">Escudo del club<input type="file" id="clLogo" accept="image/*" hidden></label><button id="clLogoX" hidden>Quitar escudo</button></div>
+          <details style="margin-top:10px"><summary class="lbl" style="cursor:pointer;margin:0">Cuerpo técnico</summary>
+            <datalist id="roleList"><option value="Entrenador"><option value="Segundo entrenador"><option value="Delegado"><option value="Preparador físico"><option value="Entrenador de porteros"><option value="Fisioterapeuta"><option value="Coordinador"></datalist>
+            <div id="stRows"></div><button id="stAdd" style="margin-top:6px">+ Añadir miembro</button></details></div>
+        <div id="nextBox"></div>
+        <div class="row"><button id="calImp" class="prim">Pegar calendario</button><button id="mAdd">+ Añadir partido</button></div>
+        <div><p class="lbl">Pendientes</p><div id="mPend"></div></div>
+        <div><p class="lbl">Jugados</p><div id="mDone"></div></div>
+      </section>
+
       <section class="pane" data-pane="file">
         <div><p class="lbl">Imagen</p><div class="row"><button id="xPng" class="prim">Descargar imagen</button><button id="xCopy">Copiar imagen</button></div></div>
         <div><p class="lbl">Compartir jugada</p>
@@ -273,7 +309,7 @@ body.present .top,body.present .panel,body.present #selbar,body.present #fab,bod
           <div id="plist" style="margin-top:8px"></div></div>
         <div><p class="lbl">Copia de seguridad</p><div class="row"><button id="xJson">Exportar archivo</button><label class="btn">Importar archivo<input type="file" id="iJson" accept=".json,application/json" hidden></label></div>
           <p class="hint" style="margin-top:6px">Para llevar tus jugadas a otro dispositivo.</p></div>
-        <div class="row"><button id="newBoard" class="danger">Pizarra nueva</button><button id="newsBtn">Novedades de esta versión</button></div>
+        <div class="row"><button id="newBoard" class="danger">Pizarra nueva</button><button id="newsBtn">Novedades y versiones</button></div>
         <p class="hint">Pizarra táctica · versión <b id="appVer"></b></p>
         <p class="hint">Todo se guarda automáticamente en este navegador. Ratón: botón derecho y arrastrar sobre una pieza o trazo → en horizontal gira, en vertical cambia el tamaño (Mayús ajusta de 15 en 15°). Rueda → tamaño; Mayús + rueda → girar. Zoom: rueda en una zona vacía, Ctrl + rueda, pellizco con dos dedos o teclas + y −; desplazar con botón central, botón derecho en zona vacía o dos dedos. Selección múltiple: arrastra en una zona vacía o Mayús + clic. Con un dedo sobre una pieza y otro al lado, pellizca o gira para cambiar tamaño y ángulo. Atajos: 1–9 y 0 herramientas, P presentar, N numerar trazos, Ctrl+Z / Ctrl+Y, Supr para borrar, flechas para mover la selección.</p>
       </section>
@@ -298,9 +334,56 @@ body.present .top,body.present .panel,body.present #selbar,body.present #fab,bod
   <div class="row" style="justify-content:space-between"><button id="rDel" class="danger">Eliminar plantilla</button><span class="row"><button id="rCancel">Cancelar</button><button id="rOk" class="prim">Guardar</button></span></div>
 </div></div>
 <div class="modal" id="newsDlg" hidden><div role="dialog" aria-modal="true" aria-labelledby="newsT">
-  <p id="newsT" style="margin:0;font:800 26px/1.1 'Saira Condensed',sans-serif">Novedades de la versión <span id="newsVer"></span></p>
-  <ul id="newsList" style="margin:0;padding-left:20px;display:grid;gap:8px"></ul>
+  <p id="newsT" style="margin:0;font:800 26px/1.1 'Saira Condensed',sans-serif">Novedades · versión <span id="newsVer"></span></p>
+  <p class="hint" style="margin-top:-6px">Historial completo desde la primera versión publicada. Pulsa una versión para verla.</p>
+  <div id="newsList" class="chl"></div>
   <div class="row" style="justify-content:flex-end"><button id="newsClose" class="prim">Entendido</button></div>
+</div></div>
+<div class="modal" id="mDlg" hidden><div role="dialog" aria-modal="true" aria-labelledby="mT">
+  <p id="mT" style="margin:0;font:800 24px/1.1 'Saira Condensed',sans-serif">Partido</p>
+  <div class="row"><label class="fld n">Jornada<input type="text" id="mJ" inputmode="numeric" maxlength="2"></label><label class="fld grow">Fecha<input type="date" id="mDate"></label><label class="fld" style="width:120px">Hora<input type="time" id="mTime"></label></div>
+  <div class="row"><label class="fld grow">Rival<input type="text" id="mRival" maxlength="60"></label><label class="fld">Juegas<select id="mHome"><option value="1">En casa</option><option value="0">Fuera</option></select></label></div>
+  <label class="fld">Campo<input type="text" id="mField" maxlength="60" placeholder="Opcional"></label>
+  <details id="mLog"><summary class="lbl" style="cursor:pointer;margin:2px 0">Citación y viaje (para las diapositivas)</summary>
+    <div style="display:grid;gap:8px;margin-top:6px">
+      <div class="row"><label class="fld" style="width:130px">Hora de quedada<input type="time" id="mMeet"></label><label class="fld grow">Lugar de quedada<input type="text" id="mMeetP" maxlength="80" placeholder="Ej.: puerta del polideportivo"></label></div>
+      <div class="row"><label class="fld grow">Día de salida<input type="date" id="mDepD"></label><label class="fld" style="width:130px">Hora de salida<input type="time" id="mDep"></label></div>
+      <label class="fld">Dirección del campo<input type="text" id="mAddr" maxlength="120"></label>
+      <label class="fld">Equipación<input type="text" id="mKit" maxlength="60" placeholder="Ej.: 1.ª equipación (roja)"></label>
+      <label class="fld">Observaciones<textarea id="mInfo" rows="2" maxlength="400" placeholder="Ej.: traer DNI y ropa de abrigo"></textarea></label>
+      <div class="row"><img id="mLogoP" alt="Escudo del rival" width="44" height="44" style="border-radius:50%;background:#fff;object-fit:contain;border:1px solid var(--line)" hidden><label class="btn">Escudo del rival<input type="file" id="mLogo" accept="image/*" hidden></label><button id="mLogoX" hidden>Quitar</button></div>
+    </div></details>
+  <div class="row"><label class="fld n">Goles a favor<input type="text" id="mGf" inputmode="numeric" maxlength="2"></label><label class="fld n">En contra<input type="text" id="mGa" inputmode="numeric" maxlength="2"></label><span class="hint" style="align-self:end;padding-bottom:12px">Vacío si aún no se ha jugado</span></div>
+  <div class="row" style="justify-content:space-between"><button id="mDel" class="danger">Eliminar</button><span class="row"><button id="mCancel">Cancelar</button><button id="mSave" class="prim">Guardar</button></span></div>
+</div></div>
+<div class="modal wide" id="impDlg" hidden><div role="dialog" aria-modal="true" aria-labelledby="impT">
+  <p id="impT" style="margin:0;font:800 24px/1.1 'Saira Condensed',sans-serif">Pegar calendario</p>
+  <ol class="hint" style="margin:0;padding-left:20px;display:grid;gap:2px"><li>Abre la página de tu equipo en la web de la federación (botón «Abrir web»).</li><li>Selecciona el calendario o toda la página (Ctrl+A) y cópialo (Ctrl+C).</li><li>Pégalo aquí (Ctrl+V) y pulsa Analizar. Revisa la lista antes de importar.</li></ol>
+  <label class="fld">Tu equipo, tal como aparece en la web<input type="text" id="impTeam" maxlength="60" placeholder="Si lo dejas vacío, se busca el equipo que más se repite"></label>
+  <textarea id="impTxt" rows="7" placeholder="Pega aquí el calendario"></textarea>
+  <div class="row"><button id="impGo">Analizar</button><span class="hint" id="impInfo"></span></div>
+  <div id="impPrev" style="max-height:240px;overflow:auto"></div>
+  <div class="row" style="justify-content:flex-end"><button id="impCancel">Cancelar</button><button id="impOk" class="prim" disabled>Importar</button></div>
+</div></div>
+<div class="modal wide" id="luDlg" hidden><div role="dialog" aria-modal="true" aria-labelledby="luT">
+  <p id="luT" style="margin:0;font:800 24px/1.1 'Saira Condensed',sans-serif">Alineación</p>
+  <p class="hint" id="luSub" style="margin-top:-6px"></p>
+  <div class="row"><label class="fld grow">Modalidad<select id="luType"><option value="f11">Fútbol 11</option><option value="f7">Fútbol 7</option><option value="sala">Fútbol sala</option></select></label><label class="fld grow">Sistema<select id="luForm"></select></label></div>
+  <div class="row"><select id="luRoster" aria-label="Plantilla" style="flex:1 1 180px;width:auto"></select><button id="luFromR">Cargar plantilla</button><button id="luFromF">Cargar del campo</button></div>
+  <p class="hint" id="luInfo"></p>
+  <div id="luRows"></div>
+  <div class="row"><button id="luAdd">+ Añadir jugador</button></div>
+  <label class="fld">Consignas para el partido<textarea id="luNotes" rows="3" maxlength="1200" placeholder="Ej.: presión alta tras pérdida, balón parado a favor al primer palo…"></textarea></label>
+  <div class="row" style="justify-content:space-between"><span class="row"><button id="luBoard" class="prim">Ver en la pizarra</button><button id="luPdf">PDF de la alineación</button></span><button id="luClose">Cerrar</button></div>
+</div></div>
+<div class="modal wide" id="slDlg" hidden><div role="dialog" aria-modal="true" aria-labelledby="slT">
+  <p id="slT" style="margin:0;font:800 24px/1.1 'Saira Condensed',sans-serif">Diapositivas del partido</p>
+  <div class="row"><label class="fld grow">Diseño<select id="slStyle"><option value="verde">Césped</option><option value="noche">Noche</option><option value="club">Colores del club</option></select></label><label class="fld grow">Formato<select id="slFmt"><option value="story">Vertical 9:16 (WhatsApp, estados)</option><option value="sq">Cuadrado 1:1</option><option value="wide">Horizontal 16:9</option></select></label></div>
+  <div class="row" id="slPick"></div>
+  <div style="display:grid;place-items:center;background:var(--soft);border-radius:12px;padding:10px"><canvas id="slCv" width="1080" height="1920" style="max-width:100%;max-height:50vh;width:auto;height:auto;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.25)"></canvas></div>
+  <div class="row" style="justify-content:center"><button id="slPrev" aria-label="Diapositiva anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><b id="slN" style="min-width:190px;text-align:center"></b><button id="slNext" aria-label="Diapositiva siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div>
+  <div class="row" style="justify-content:space-between"><span class="row"><button id="slShare" class="prim">Compartir</button><button id="slPng">Descargar esta imagen</button><button id="slPdf">Todas en PDF</button></span><button id="slClose">Cerrar</button></div>
+  <p class="hint">Los datos salen del partido (Editar › Citación y viaje), de la alineación de la jornada y de Partidos › Mi equipo (escudo, competición y cuerpo técnico).</p>
 </div></div>
 <div id="toast" role="status" aria-live="polite"></div>
 
@@ -315,7 +398,7 @@ const hex=(v,d)=>/^#[0-9a-f]{6}$/i.test(v)?v:d;
 const num=(v,d=0)=>Number.isFinite(+v)?+v:d;
 const clampN=(v,a,b)=>Math.max(a,Math.min(b,v));
 const SHEETK=[['title',60],['cat',30],['obj',200],['dur',40],['pl',40],['sp',60],['mat',120],['desc',1500],['var',800]];
-const APP_VERSION='1.2.0',VKEY='pizarra-tactica-version';
+const APP_VERSION='1.3.0',VKEY='pizarra-tactica-version';
 const SIZE={f11:11,f7:7,sala:5,pos:5,blank:11,board:11};
 const BOUNDS={pos:[225,825,40,640]};
 const FORMS={11:['4-4-2','4-3-3','4-2-3-1','3-5-2','5-3-2','4-1-4-1','3-4-3'],7:['3-2-1','2-3-1','3-1-2','2-1-2-1'],5:['1-2-1','2-2','3-1','2-1-1']};
@@ -792,7 +875,7 @@ function dupSel(){
 }
 $('#sbDel').onclick=delSel;$('#sbDup').onclick=dupSel;$('#sbEdit').onclick=()=>openTab('sel',true);$('#zoomBtn').onclick=resetZoom;
 document.addEventListener('keydown',e=>{
-  const dlg=['#modal','#prev','#rDlg','#shareDlg','#newsDlg'].find(q=>!$(q).hidden);
+  const dlg=['#modal','#prev','#rDlg','#shareDlg','#newsDlg','#mDlg','#impDlg','#luDlg','#slDlg'].find(q=>!$(q).hidden);
   if(dlg){if(e.key==='Escape'){if(dlg==='#modal')$('#mNo').click();else $(dlg).hidden=true}return}
   if(pres){presWake();
     if(['ArrowRight','ArrowDown','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();presStep(1)}
@@ -1166,12 +1249,13 @@ $('#plist').onclick=async e=>{
   if(o&&p[o.dataset.open]){const c=clean(p[o.dataset.open].S);if(!c)return toast('Esa jugada está dañada.');if(playing)togglePlay();snap();S=c;selI=selD=null;$('#pName').value=o.dataset.open;afterLoad();toast('Jugada abierta.')}
   if(d&&await ask(`¿Borrar «${d.dataset.delp}»? No se puede deshacer.`,'Borrar')){delete p[d.dataset.delp];putP(p);renderProjects()}
 };
-$('#xJson').onclick=async()=>{const b=new Blob([JSON.stringify({app:'pizarra-tactica',v:2,version:APP_VERSION,actual:S,jugadas:getP(),plantillas:getR()},null,1)],{type:'application/json'});if(!await saveFile(fname()+'.json',b))toast('No se pudo exportar en este entorno.')};
+$('#xJson').onclick=async()=>{const b=new Blob([JSON.stringify({app:'pizarra-tactica',v:2,version:APP_VERSION,equipo:TM,actual:S,jugadas:getP(),plantillas:getR()},null,1)],{type:'application/json'});if(!await saveFile(fname()+'.json',b))toast('No se pudo exportar en este entorno.')};
 $('#iJson').onchange=async e=>{
   const f=e.target.files[0];e.target.value='';if(!f)return;
   try{
     const o=JSON.parse(await f.text()),cur=clean(o.actual||o);if(!cur)throw 0;
     if(o.jugadas&&typeof o.jugadas==='object'){const p=getP();for(const k in o.jugadas){const c=clean(o.jugadas[k]&&o.jugadas[k].S);if(c)p[String(k).slice(0,40)]={at:num(o.jugadas[k].at,Date.now()),S:c}}putP(p);renderProjects()}
+    if(o.equipo&&typeof o.equipo==='object'){const t=cleanTM(o.equipo);if(t){TM=t;saveTM();renderTeam();renderClub()}}
     if(Array.isArray(o.plantillas)){const a=getR();o.plantillas.forEach(r=>{const c=cleanR(r);if(!c)return;const i=a.findIndex(x=>x.id===c.id);if(i>=0)a[i]=c;else a.push(c)});putR(a);renderRosters()}
     if(playing)togglePlay();snap();S=cur;selI=selD=null;clearGrp();afterLoad();toast('Archivo importado.');
   }catch(err){toast('Ese archivo no es una pizarra válida.')}
@@ -1304,10 +1388,10 @@ function loadPDF(){
 }
 const CP='€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ';
 const T=t=>[...String(t||'')].map(ch=>ch.charCodeAt(0)<256||CP.includes(ch)?ch:ch==='→'?'->':ch==='′'?"'":ch==='″'?'"':'?').join('');
-async function captureState(st,withFrames){
+async function captureState(st,withFrames,orient){
   const keep=JSON.stringify(S),ks=clearSel(),kz=zoom.z,kvf=vf;
   try{
-    S=clean(JSON.parse(JSON.stringify(st)))||JSON.parse(keep);S.orient='h';S.t3d=false;zoom.z=1;
+    S=clean(JSON.parse(JSON.stringify(st)))||JSON.parse(keep);S.orient=orient||'h';S.t3d=false;zoom.z=1;
     gP.innerHTML=pitchSVG();applyView(true);
     const F=S.frames;if(F.length)applyFrame(F[0]);
     vf=-1;renderItems();renderDraws();
@@ -1522,13 +1606,338 @@ $('#lib').onclick=e=>{const b=e.target.closest('[data-lib]');if(!b||busy||pres)r
   if(playing)togglePlay();snap();S=buildTpl(t);selI=selD=null;clearGrp();zoom.z=1;$('#pName').value=t.sheet.title;afterLoad();
   toast('Ejercicio cargado. Pulsa Presentar o Reproducir para verlo; Deshacer vuelve a tu pizarra.')};
 
+/* ---------- Partidos ---------- */
+const TKEY='pizarra-tactica-v2-equipo';
+const nrm=t=>String(t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+const mid=()=>'m'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+function cleanLU(l){if(!l||typeof l!=='object')return null;const type=SIZE[l.type]&&l.type!=='pos'&&l.type!=='blank'&&l.type!=='board'?l.type:'f11';const fl=FORMS[SIZE[type]];
+  return{type,form:fl.includes(l.form)?l.form:fl[0],roster:String(l.roster||'').slice(0,24),notes:String(l.notes||'').slice(0,1200),
+    pl:(Array.isArray(l.pl)?l.pl:[]).slice(0,40).map(p=>({n:String((p&&p.n)||'').replace(/\D/g,'').slice(0,2),name:String((p&&p.name)||'').slice(0,18),st:p&&(p.st==='t'||p.st==='s')?p.st:''}))}}
+const img=v=>typeof v==='string'&&/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(v)&&v.length<400000?v:'';
+const SLK=[['match','Partido'],['squad','Convocatoria'],['meet','Citación'],['lineup','Alineación'],['staff','Cuerpo técnico']];
+function cleanTM(o){if(!o||typeof o!=='object')return null;const d=v=>/^\d{4}-\d{2}-\d{2}$/.test(v)?v:'',t=v=>/^\d{2}:\d{2}$/.test(v)?v:'',g=v=>String(v??'').replace(/\D/g,'').slice(0,2);
+  return{team:String(o.team||'').slice(0,60),url:/^https:\/\//.test(o.url||'')?String(o.url).slice(0,400):'',
+    club:(()=>{const c=o.club&&typeof o.club==='object'?o.club:{},sl=c.sl&&typeof c.sl==='object'?c.sl:{};return{comp:String(c.comp||'').slice(0,60),logo:img(c.logo),
+      staff:(Array.isArray(c.staff)?c.staff:[]).slice(0,12).map(x=>({role:String((x&&x.role)||'').slice(0,40),name:String((x&&x.name)||'').slice(0,50),phone:String((x&&x.phone)||'').replace(/[^\d+ ]/g,'').slice(0,20)})),
+      sl:{style:['verde','noche','club'].includes(sl.style)?sl.style:'verde',fmt:['story','sq','wide'].includes(sl.fmt)?sl.fmt:'story',pick:Array.isArray(sl.pick)?sl.pick.filter(k=>SLK.some(x=>x[0]===k)):['match','squad','meet','staff']}}})(),
+    matches:(Array.isArray(o.matches)?o.matches:[]).slice(0,80).map(m=>({id:String(m.id||mid()).replace(/[^\w-]/g,'').slice(0,24)||mid(),j:g(m.j),date:d(m.date),time:t(m.time),home:m.home!==false,rival:String(m.rival||'').slice(0,60),field:String(m.field||'').slice(0,60),gf:g(m.gf),ga:g(m.ga),lu:cleanLU(m.lu),
+      meet:t(m.meet),meetPlace:String(m.meetPlace||'').slice(0,80),depDate:d(m.depDate),dep:t(m.dep),addr:String(m.addr||'').slice(0,120),kit:String(m.kit||'').slice(0,60),info:String(m.info||'').slice(0,400),rlogo:img(m.rlogo)}))}}
+let TM=cleanTM({});try{TM=cleanTM(JSON.parse(localStorage.getItem(TKEY)))||TM}catch(e){}
+const saveTM=()=>{try{localStorage.setItem(TKEY,JSON.stringify(TM))}catch(e){}};
+const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const played=m=>m.gf!==''&&m.ga!=='';
+function fmtD(iso,long){if(!iso)return '';const d=new Date(iso+'T12:00:00');const t=d.toLocaleDateString('es-ES',long?{weekday:'long',day:'numeric',month:'long',year:'numeric'}:{weekday:'short',day:'numeric',month:'short'});return long?t.charAt(0).toUpperCase()+t.slice(1):t}
+const teamName=()=>TM.team||S.teams.home.name||'Mi equipo';
+const vsTxt=m=>m.home?`${teamName()} – ${m.rival||'Rival'}`:`${m.rival||'Rival'} – ${teamName()}`;
+function sortM(){TM.matches.sort((a,b)=>(a.date||'9999')<(b.date||'9999')?-1:(a.date||'9999')>(b.date||'9999')?1:(+a.j||99)-(+b.j||99))}
+function nextMatch(){const t=today(),p=TM.matches.filter(m=>!played(m));return p.find(m=>m.date&&m.date>=t)||p.find(m=>!m.date)||p[0]||null}
+function mRow(m){
+  const res=played(m)?(()=>{const a=+m.gf,b=+m.ga,c=a>b?'w':a<b?'l':'d';return `<span class="res ${c}">${m.home?a+' – '+b:b+' – '+a}</span>`})():`<span class="hint">${m.home?'Casa':'Fuera'}</span>`;
+  return `<div class="mrow"><span class="j">${m.j?'J'+esc(m.j):'–'}</span><div><b>${esc(m.home?'vs ':'en ')}${esc(m.rival||'Rival')}</b><small>${esc([fmtD(m.date),m.time].filter(Boolean).join(' · ')||'Sin fecha')}${m.lu&&m.lu.pl.some(p=>p.st==='t')?' · alineación lista':''}</small></div>${res}<span class="row" style="gap:4px"><button data-lu="${m.id}">Alineación</button><button data-sl="${m.id}">Diapositivas</button><button data-me="${m.id}" aria-label="Editar partido">Editar</button></span></div>`;
+}
+function renderTeam(){
+  sortM();const nx=nextMatch(),pend=TM.matches.filter(m=>!played(m)),done=TM.matches.filter(played).reverse();
+  if(document.activeElement!==$('#tmName'))$('#tmName').value=TM.team;if(document.activeElement!==$('#tmUrl'))$('#tmUrl').value=TM.url;
+  const a=$('#tmOpen');if(TM.url){a.href=TM.url;a.removeAttribute('aria-disabled');a.style.opacity=''}else{a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.style.opacity='.45'}
+  $('#nextBox').innerHTML=nx?`<div class="mcard"><span class="lbl" style="margin:0">Próximo partido${nx.j?' · Jornada '+esc(nx.j):''}</span><span class="big">${esc(vsTxt(nx))}</span><span>${esc([fmtD(nx.date,true),nx.time].filter(Boolean).join(', ')||'Fecha por confirmar')}${nx.field?' · '+esc(nx.field):''}</span><div class="row"><button class="prim" data-lu="${nx.id}">Alineación de la jornada</button><button data-sl="${nx.id}">Diapositivas</button><button data-me="${nx.id}">Editar</button></div></div>`:'<p class="hint">Añade tus partidos o pega el calendario de la federación para ver aquí el próximo.</p>';
+  $('#mPend').innerHTML=pend.length?pend.map(mRow).join(''):'<p class="hint">Sin partidos pendientes.</p>';
+  $('#mDone').innerHTML=done.length?done.map(mRow).join(''):'<p class="hint">Todavía no hay resultados.</p>';
+}
+$('#tmName').oninput=e=>{TM.team=e.target.value.slice(0,60);saveTM();clearTimeout(renderTeam.t);renderTeam.t=setTimeout(renderTeam,400)};
+$('#tmUrl').oninput=e=>{const v=e.target.value.trim();TM.url=/^https:\/\//.test(v)?v.slice(0,400):'';saveTM();renderTeam()};
+$('#tmOpen').onclick=e=>{if(!TM.url){e.preventDefault();toast('Pega primero la dirección de tu equipo en la web de la federación.');$('#tmUrl').focus()}};
+document.querySelector('[data-pane="team"]').addEventListener('click',e=>{const l=e.target.closest('[data-lu]'),m=e.target.closest('[data-me]'),d=e.target.closest('[data-sl]');if(l)openLU(l.dataset.lu);else if(m)openM(m.dataset.me);else if(d)openSL(d.dataset.sl)});
+/* club y cuerpo técnico */
+let mLogoTmp='';
+function showLogo(ip,bx,v){const i=$(ip);if(v){i.src=v;i.hidden=false}else{i.removeAttribute('src');i.hidden=true}$(bx).hidden=!v}
+async function fileToLogo(file,size){const url=URL.createObjectURL(file);try{const im=await loadImg(url),k=Math.min(1,size/Math.max(im.width,im.height)),cv=document.createElement('canvas');cv.width=Math.max(1,Math.round(im.width*k));cv.height=Math.max(1,Math.round(im.height*k));cv.getContext('2d').drawImage(im,0,0,cv.width,cv.height);return cv.toDataURL('image/png')}finally{URL.revokeObjectURL(url)}}
+$('#clLogo').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;try{TM.club.logo=await fileToLogo(f,320);saveTM();showLogo('#clLogoP','#clLogoX',TM.club.logo)}catch(_){toast('No se pudo leer esa imagen.')}};
+$('#clLogoX').onclick=()=>{TM.club.logo='';saveTM();showLogo('#clLogoP','#clLogoX','')};
+$('#mLogo').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;try{mLogoTmp=await fileToLogo(f,240);showLogo('#mLogoP','#mLogoX',mLogoTmp)}catch(_){toast('No se pudo leer esa imagen.')}};
+$('#mLogoX').onclick=()=>{mLogoTmp='';showLogo('#mLogoP','#mLogoX','')};
+$('#clComp').oninput=e=>{TM.club.comp=e.target.value.slice(0,60);saveTM()};
+function renderStaff(){const L=TM.club.staff;
+  $('#stRows').innerHTML=L.length?L.map((x,i)=>`<div class="rrow" data-i="${i}"><input type="text" data-f="role" list="roleList" maxlength="40" placeholder="Cargo" aria-label="Cargo" style="flex:1 1 140px"><input type="text" data-f="name" maxlength="50" placeholder="Nombre" aria-label="Nombre" style="flex:1 1 150px"><input type="text" data-f="phone" inputmode="tel" maxlength="20" placeholder="Teléfono (opcional)" aria-label="Teléfono" style="flex:1 1 120px"><button data-m="x" class="danger" aria-label="Quitar">✕</button></div>`).join(''):'<p class="hint">Añade al entrenador, segundo, delegado… Salen en la diapositiva de cuerpo técnico.</p>';
+  $$('#stRows .rrow').forEach(r=>{const x=L[+r.dataset.i];for(const f of ['role','name','phone'])r.querySelector(`[data-f=${f}]`).value=x[f]})}
+$('#stRows').addEventListener('input',e=>{const r=e.target.closest('.rrow');if(!r)return;const x=TM.club.staff[+r.dataset.i],f=e.target.dataset.f;if(!x||!f)return;x[f]=f==='phone'?e.target.value.replace(/[^\d+ ]/g,'').slice(0,20):e.target.value.slice(0,f==='role'?40:50);saveTM()});
+$('#stRows').addEventListener('click',e=>{const b=e.target.closest('[data-m=x]');if(!b)return;TM.club.staff.splice(+b.closest('.rrow').dataset.i,1);saveTM();renderStaff()});
+$('#stAdd').onclick=()=>{if(TM.club.staff.length>=12)return;TM.club.staff.push({role:TM.club.staff.length?'':'Entrenador',name:'',phone:''});saveTM();renderStaff();const r=$$('#stRows .rrow');r[r.length-1].querySelector('[data-f=name]').focus()};
+function renderClub(){if(document.activeElement!==$('#clComp'))$('#clComp').value=TM.club.comp;showLogo('#clLogoP','#clLogoX',TM.club.logo);renderStaff()}
+
+/* ---------- Diapositivas ---------- */
+const FMT={story:[1080,1920],sq:[1080,1080],wide:[1920,1080]};
+const SL={m:null,i:0,imgs:{}};
+const F1=px=>`800 ${Math.round(px)}px "Saira Condensed","Arial Narrow",Arial,sans-serif`;
+const F2=(px,wt=600)=>`${wt} ${Math.round(px)}px Barlow,Arial,sans-serif`;
+function fitF(c,t,maxW,px,min,f){let q=px;c.font=f(q);while(q>min&&c.measureText(t).width>maxW){q-=2;c.font=f(q)}return q}
+function shade(h,f){const n=parseInt(h.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const t=f<0?0:255,k=Math.abs(f);return `rgb(${Math.round((t-r)*k+r)},${Math.round((t-g)*k+g)},${Math.round((t-b)*k+b)})`}
+function theme(st){const tc=hex(S.teams.home.color,'#e5383b');
+  if(st==='noche')return{bg1:'#121a22',bg2:'#06090c',ink:'#ffffff',mute:'#9fb0bf',acc:lum(tc)<60?'#ffd60a':tc,card:'rgba(255,255,255,.07)',line:'rgba(255,255,255,.05)'};
+  if(st==='club')return{bg1:shade(tc,-.15),bg2:shade(tc,-.62),ink:'#ffffff',mute:'rgba(255,255,255,.78)',acc:'#ffffff',card:'rgba(0,0,0,.22)',line:'rgba(255,255,255,.08)'};
+  return{bg1:'#2f9455',bg2:'#0d3a21',ink:'#ffffff',mute:'rgba(255,255,255,.75)',acc:'#ffd60a',card:'rgba(0,0,0,.24)',line:'rgba(255,255,255,.08)'}}
+function initials(t){const w=String(t||'').replace(/["'.()]/g,' ').split(/\s+/).filter(x=>x.length>2&&!/^(club|cd|cf|ud|ad|cp|sd|cdf|de|del|la|el|los|las|futbol|fútbol|deportivo|deportiva|atletico|atlético|escuela|base|alevin|alevín|infantil|cadete|juvenil|benjamin|benjamín)$/i.test(x));
+  return((w.length?w:String(t||'?').split(/\s+/)).slice(0,2).map(x=>x[0]).join('')||'?').toUpperCase()}
+function crest(c,x,y,r,im,name,col){c.save();c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fillStyle='#ffffff';c.fill();c.lineWidth=Math.max(2,r*.05);c.strokeStyle='rgba(0,0,0,.25)';c.stroke();
+  if(im){c.clip();const k=(r*1.42)/Math.max(im.width,im.height);c.drawImage(im,x-im.width*k/2,y-im.height*k/2,im.width*k,im.height*k)}
+  else{c.beginPath();c.arc(x,y,r*.86,0,Math.PI*2);c.fillStyle=col;c.fill();c.fillStyle=lum(col)>160?'#111111':'#ffffff';c.textAlign='center';c.textBaseline='middle';c.font=F1(r*.78);c.fillText(initials(name),x,y+r*.05)}
+  c.restore()}
+function rrect(c,x,y,w,h,r){c.beginPath();if(c.roundRect)c.roundRect(x,y,w,h,r);else c.rect(x,y,w,h)}
+function infoRows(c,rows,x,y,w,u,th,vs,maxY){c.textAlign='left';c.textBaseline='alphabetic';
+  for(const [lab,val,ml] of rows){if(maxY&&y+(26+vs)*u>maxY)break;c.fillStyle=th.acc;c.font=F2(26*u,700);c.fillText(lab.toUpperCase(),x,y+26*u);y+=26*u+10*u;
+    c.fillStyle=th.ink;c.font=F2(vs*u,700);const ls=wrapLines(c,val,w).slice(0,ml||2);ls.forEach(l=>{y+=vs*u*1.08;c.fillText(l,x,y)});y+=30*u}
+  return y}
+function msgS(c,a,t,u,th){c.fillStyle=th.mute;c.textAlign='center';c.textBaseline='middle';c.font=F2(40*u,600);const ls=wrapLines(c,t,a.w*.85);ls.forEach((l,i)=>c.fillText(l,a.x+a.w/2,a.y+a.h/2+(i-(ls.length-1)/2)*52*u));c.textAlign='left';c.textBaseline='alphabetic'}
+function slMatch(c,m,a,u,th,im,o){
+  const our={n:teamName(),im:im.our,col:hex(S.teams.home.color,'#e5383b')},riv={n:m.rival||'Rival',im:im.rival,col:hex(S.teams.away.color,'#1d4ed8')},L=m.home?our:riv,V=m.home?riv:our,wide=o.fmt==='wide',sq=o.fmt==='sq';
+  const cw=wide?a.w*.5:a.w,r=wide?Math.min(cw*.17,a.h*.2):sq?92*u:165*u,cy=a.y+(wide?a.h*.32:r+40*u),xL=a.x+cw*.22,xV=a.x+cw*.78;
+  c.fillStyle=th.mute;c.textAlign='center';c.font=F2(26*u,700);c.fillText('LOCAL',xL,cy-r-18*u);c.fillText('VISITANTE',xV,cy-r-18*u);
+  crest(c,xL,cy,r,L.im,L.n,L.col);crest(c,xV,cy,r,V.im,V.n,V.col);
+  c.fillStyle=th.acc;c.textAlign='center';c.textBaseline='middle';c.font=F1(r*.62);c.fillText('VS',a.x+cw/2,cy);c.textBaseline='alphabetic';
+  const nf=(sq?28:38)*u;let ny=cy+r+nf*1.4;c.fillStyle=th.ink;c.font=F2(nf,700);
+  [[L,xL],[V,xV]].forEach(([t,x])=>{wrapLines(c,t.n,cw*.4).slice(0,2).forEach((l,i)=>c.fillText(l,x,ny+i*nf*1.15))});
+  const rows=[['Fecha',fmtD(m.date,o.fmt!=='sq')],['Hora',m.time],['Campo',m.field],['Dirección',m.addr]].filter(x=>x[1]);
+  if(!rows.length)rows.push(['Fecha','Por confirmar']);
+  if(wide)infoRows(c,rows,a.x+a.w*.56,a.y+a.h*.08,a.w*.44,u,th,56,a.y+a.h);
+  else{const y0=ny+nf*2.3+(sq?10:40)*u;c.fillStyle=th.card;rrect(c,a.x,y0,a.w,a.y+a.h-y0,28*u);c.fill();if(sq){const hh=Math.ceil(rows.length/2);infoRows(c,rows.slice(0,hh),a.x+36*u,y0+30*u,a.w/2-60*u,u,th,32,a.y+a.h-6*u);infoRows(c,rows.slice(hh),a.x+a.w/2+10*u,y0+30*u,a.w/2-46*u,u,th,32,a.y+a.h-6*u)}else infoRows(c,rows,a.x+40*u,y0+34*u,a.w-80*u,u,th,54,a.y+a.h-10*u)}
+}
+function slSquad(c,m,a,u,th,im,o){
+  const P=(m.lu?m.lu.pl:[]).filter(p=>p.st==='t'||p.st==='s').sort((x,y)=>(+x.n||99)-(+y.n||99)||x.name.localeCompare(y.name));
+  if(!P.length)return msgS(c,a,'Prepara la alineación de la jornada (titulares y suplentes) para mostrar aquí a los convocados.',u,th);
+  const maxRows=Math.max(4,Math.floor((a.h-60*u)/(74*u))),cols=Math.max(1,Math.min(o.fmt==='wide'?3:2,Math.ceil(P.length/maxRows))),per=Math.ceil(P.length/cols),rh=Math.min(104*u,(a.h-60*u)/per),cwd=a.w/cols;
+  P.forEach((p,i)=>{const x=a.x+Math.floor(i/per)*cwd,y=a.y+(i%per)*rh+rh/2,r=rh*.36;c.fillStyle=th.acc;c.beginPath();c.arc(x+r,y,r,0,Math.PI*2);c.fill();
+    c.fillStyle=lum(th.acc)>150?'#111111':'#ffffff';c.font=F1(r*1.05);c.textAlign='center';c.textBaseline='middle';c.fillText(p.n||'–',x+r,y+r*.06);
+    c.textAlign='left';c.fillStyle=th.ink;fitF(c,p.name||'—',cwd-2*r-40*u,rh*.42,rh*.26,q=>F2(q,700));c.fillText(p.name||'—',x+2*r+20*u,y+2*u)});
+  c.textBaseline='alphabetic';c.fillStyle=th.mute;c.font=F2(30*u,700);c.textAlign='left';c.fillText(`${P.length} CONVOCADOS`,a.x,a.y+a.h-8*u);
+}
+function slMeet(c,m,a,u,th,im,o){
+  const rows=[['Quedada',[m.meet,m.meetPlace].filter(Boolean).join(' · ')],['Salida',[m.depDate?fmtD(m.depDate,o.fmt==='story'):'',m.dep].filter(Boolean).join(', ')],['Partido',[m.date?fmtD(m.date,o.fmt==='story'):'',m.time].filter(Boolean).join(', ')],['Campo',m.field],['Dirección',m.addr],['Equipación',m.kit],['Observaciones',m.info,4]].filter(x=>x[1]);
+  if(!rows.length)return msgS(c,a,'Rellena la citación en Editar partido › Citación y viaje.',u,th);
+  c.fillStyle=th.card;rrect(c,a.x,a.y,a.w,a.h,28*u);c.fill();
+  if(o.fmt!=='story'){const h=Math.ceil(rows.length/2),vs=o.fmt==='sq'?34:52;infoRows(c,rows.slice(0,h),a.x+36*u,a.y+36*u,a.w/2-70*u,u,th,vs,a.y+a.h);infoRows(c,rows.slice(h),a.x+a.w/2+16*u,a.y+36*u,a.w/2-52*u,u,th,vs,a.y+a.h)}
+  else infoRows(c,rows,a.x+40*u,a.y+44*u,a.w-80*u,u,th,o.fmt==='sq'?40:54,a.y+a.h-10*u);
+}
+function slLineup(c,m,a,u,th,im,o){
+  const T0=m.lu?m.lu.pl.filter(p=>p.st==='t'):[];if(!T0.length||!im.lineup)return msgS(c,a,'Prepara la alineación de la jornada para mostrarla aquí.',u,th);
+  const {img,ratio}=im.lineup,sl=slots(m.lu.form);let iw,ih,ix,iy,lx,ly,lw;
+  if(o.fmt==='wide'){iw=Math.min(a.w*.6,a.h/ratio);ih=iw*ratio;ix=a.x;iy=a.y+(a.h-ih)/2;lx=ix+iw+50*u;ly=a.y;lw=a.x+a.w-lx}
+  else if(o.fmt==='sq'){ih=Math.min(a.h-40*u,a.w*ratio);iw=ih/ratio;ix=a.x+(a.w-iw)/2;iy=a.y;lx=null}
+  else if(im.lineupV){const V=im.lineupV;iw=Math.min(a.w*.6,(a.h-120*u)/V.ratio);ih=iw*V.ratio;ix=a.x;iy=a.y;lx=ix+iw+40*u;ly=a.y+10*u;lw=a.x+a.w-lx}
+  else{iw=a.w;ih=iw*ratio;ix=a.x;iy=a.y;lx=a.x;ly=iy+ih+40*u;lw=a.w}
+  const pic=o.fmt==='story'&&im.lineupV?im.lineupV.img:img;
+  c.save();rrect(c,ix,iy,iw,ih,20*u);c.clip();c.drawImage(pic,ix,iy,iw,ih);c.restore();
+  if(o.fmt==='sq'){c.fillStyle=th.mute;c.font=F2(30*u,700);c.textAlign='left';c.fillText(`SISTEMA ${m.lu.form}`,a.x,a.y+a.h-6*u);return}
+  const cols=o.fmt==='wide'||im.lineupV?1:2,per=Math.ceil(T0.length/cols),rh=Math.min(66*u,(a.y+a.h-ly-(o.fmt==='story'&&im.lineupV?150:70)*u)/per),cwd=lw/cols;
+  c.textBaseline='middle';T0.forEach((p,i)=>{const x=lx+Math.floor(i/per)*cwd,y=ly+(i%per)*rh+rh/2;c.fillStyle=th.acc;c.font=F2(24*u,700);c.textAlign='left';c.fillText(sl[i]||'',x,y);
+    c.fillStyle=th.ink;c.font=F1(rh*.6);c.fillText(p.n||'–',x+70*u,y+2*u);fitF(c,p.name||'',cwd-150*u,rh*.46,rh*.3,q=>F2(q,700));c.fillText(p.name||'',x+128*u,y)});
+  c.textBaseline='alphabetic';const subs=m.lu.pl.filter(p=>p.st==='s');if(subs.length){c.fillStyle=th.mute;c.font=F2(26*u,600);const sw=o.fmt==='story'?a.w:lw,sx=o.fmt==='story'?a.x:lx,ls=wrapLines(c,'Suplentes: '+subs.map(p=>`${p.n} ${p.name}`.trim()).join(', '),sw);ls.slice(0,3).forEach((l,i)=>c.fillText(l,sx,a.y+a.h-(ls.slice(0,3).length-1-i)*34*u))}
+}
+function slStaff(c,m,a,u,th,im,o){
+  const L=TM.club.staff.filter(x=>x.name);if(!L.length)return msgS(c,a,'Añade el cuerpo técnico en Partidos › Mi equipo › Cuerpo técnico.',u,th);
+  const wide=o.fmt==='wide',r=wide?Math.min(a.h*.3,190*u):o.fmt==='sq'?90*u:130*u;
+  let x0=a.x,y=a.y,w=a.w;if(wide){crest(c,a.x+r+20*u,a.y+a.h/2,r,im.our,teamName(),hex(S.teams.home.color,'#e5383b'));x0=a.x+2*r+90*u;w=a.x+a.w-x0}else{crest(c,a.x+a.w/2,a.y+r,r,im.our,teamName(),hex(S.teams.home.color,'#e5383b'));y=a.y+2*r+50*u}
+  const rh=Math.min(o.fmt==='sq'?112*u:150*u,(a.y+a.h-y)/L.length);c.textAlign='left';
+  L.forEach((s0,i)=>{const yy=y+i*rh;c.fillStyle=th.acc;c.font=F2(Math.min(26*u,rh*.22),700);c.fillText((s0.role||'').toUpperCase(),x0,yy+rh*.24);
+    c.fillStyle=th.ink;fitF(c,s0.name,w,Math.min(54*u,rh*.42),24*u,q=>F2(q,700));c.fillText(s0.name,x0,yy+rh*.62);
+    if(s0.phone){c.fillStyle=th.mute;c.font=F2(Math.min(32*u,rh*.26),600);c.fillText(s0.phone,x0,yy+rh*.9)}});
+}
+function drawSlide(kind,m,o,im){
+  const [w,h]=FMT[o.fmt],cv=document.createElement('canvas');cv.width=w;cv.height=h;const c=cv.getContext('2d'),u=Math.min(w,h)/1080,th=theme(o.style),P=72*u;
+  const g=c.createLinearGradient(0,0,w*.35,h);g.addColorStop(0,th.bg1);g.addColorStop(1,th.bg2);c.fillStyle=g;c.fillRect(0,0,w,h);
+  c.strokeStyle=th.line;c.lineWidth=10*u;const R0=Math.min(w,h)*.46;c.beginPath();c.arc(w,h*.5,R0,0,Math.PI*2);c.stroke();c.beginPath();c.arc(w,h*.5,R0*.06,0,Math.PI*2);c.fill();
+  c.strokeRect(-10,h*.5-R0*.9,R0*.55,R0*1.8);
+  const kick=[m.j?`Jornada ${m.j}`:'',TM.club.comp].filter(Boolean).join(' · ')||teamName();
+  c.textAlign='left';c.textBaseline='alphabetic';let y=P+30*u;c.fillStyle=th.acc;fitF(c,kick.toUpperCase(),w-2*P,32*u,20*u,q=>F2(q,700));c.fillText(kick.toUpperCase(),P,y);
+  const title=({match:'Día de partido',squad:'Convocatoria',meet:'Citación',lineup:'Alineación',staff:'Cuerpo técnico'})[kind].toUpperCase();
+  const tp=fitF(c,title,w-2*P,(o.fmt==='sq'?112:130)*u,60*u,F1);y+=tp*.95;c.fillStyle=th.ink;c.fillText(title,P,y);
+  if(kind!=='match'&&kind!=='staff'){y+=50*u;c.fillStyle=th.mute;fitF(c,vsTxt(m),w-2*P,38*u,22*u,q=>F2(q,600));c.fillText(vsTxt(m),P,y)}
+  const top=y+(o.fmt==='sq'?40:60)*u,fh=96*u,fy=h-P-fh;
+  c.fillStyle=th.card;rrect(c,P,fy,w-2*P,fh,fh/2);c.fill();
+  crest(c,P+fh/2,fy+fh/2,fh*.38,im.our,teamName(),hex(S.teams.home.color,'#e5383b'));
+  c.textAlign='left';c.fillStyle=th.ink;fitF(c,teamName(),w-2*P-fh-40*u,32*u,20*u,q=>F2(q,700));c.fillText(teamName(),P+fh+14*u,fy+fh/2-2*u);
+  const sub=[TM.club.comp,m.date?fmtD(m.date):'',m.time].filter(Boolean).join(' · ');c.fillStyle=th.mute;c.font=F2(24*u,600);c.fillText(sub,P+fh+14*u,fy+fh/2+28*u);
+  const a={x:P,y:top,w:w-2*P,h:fy-40*u-top};
+  ({match:slMatch,squad:slSquad,meet:slMeet,lineup:slLineup,staff:slStaff})[kind](c,m,a,u,th,im,o);
+  return cv;
+}
+const slOpt=()=>TM.club.sl;
+const slList=()=>SLK.filter(([k])=>slOpt().pick.includes(k));
+async function slLoad(){const m=SL.m,im={our:null,rival:null,lineup:null};
+  try{await Promise.all([document.fonts.load(F1(60)),document.fonts.load(F2(40,700)),document.fonts.load(F2(40,600))])}catch(e){}
+  try{if(TM.club.logo)im.our=await loadImg(TM.club.logo)}catch(e){}try{if(m.rlogo)im.rival=await loadImg(m.rlogo)}catch(e){}
+  if(slOpt().pick.includes('lineup')&&m.lu&&m.lu.pl.some(p=>p.st==='t')){try{const st=buildLineup(m),h=await captureState(st,false,'h'),v=await captureState(st,false,'v');im.lineup={img:await loadImg(h.main),ratio:h.ratio};im.lineupV={img:await loadImg(v.main),ratio:v.ratio}}catch(e){}}
+  SL.imgs=im}
+function slDraw(){const L=slList(),v=$('#slCv'),ctx=v.getContext('2d');
+  if(!L.length){$('#slN').textContent='Elige al menos una diapositiva';ctx.clearRect(0,0,v.width,v.height);return}
+  SL.i=clampN(SL.i,0,L.length-1);const cv=drawSlide(L[SL.i][0],SL.m,slOpt(),SL.imgs);v.width=cv.width;v.height=cv.height;ctx.drawImage(cv,0,0);
+  $('#slN').textContent=`${SL.i+1} / ${L.length} · ${L[SL.i][1]}`;$('#slPrev').disabled=SL.i<=0;$('#slNext').disabled=SL.i>=L.length-1}
+async function openSL(id){const m=TM.matches.find(x=>x.id===id);if(!m||busy)return;SL.m=m;SL.i=0;SL.imgs={};const o=slOpt();
+  $('#slT').textContent=`Diapositivas · ${m.j?'Jornada '+m.j+' · ':''}${vsTxt(m)}`;$('#slStyle').value=o.style;$('#slFmt').value=o.fmt;
+  $('#slPick').innerHTML=SLK.map(([k,t])=>`<label class="check"><input type="checkbox" data-k="${k}"${o.pick.includes(k)?' checked':''}> ${t}</label>`).join('');
+  $('#slDlg').hidden=false;$('#slN').textContent='Preparando…';await slLoad();slDraw()}
+$('#slStyle').onchange=e=>{slOpt().style=e.target.value;saveTM();slDraw()};
+$('#slFmt').onchange=e=>{slOpt().fmt=e.target.value;saveTM();slDraw()};
+$('#slPick').addEventListener('change',async e=>{const k=e.target.dataset.k;if(!k)return;const o=slOpt();o.pick=SLK.map(x=>x[0]).filter(x=>x===k?e.target.checked:o.pick.includes(x));saveTM();if(k==='lineup'&&e.target.checked&&!SL.imgs.lineup)await slLoad();slDraw()});
+$('#slPrev').onclick=()=>{SL.i--;slDraw()};$('#slNext').onclick=()=>{SL.i++;slDraw()};$('#slClose').onclick=()=>{$('#slDlg').hidden=true};
+const slBase=()=>`Jornada ${SL.m.j||''} ${SL.m.rival||''}`.replace(/[\\/:*?"<>|]+/g,'-').replace(/\s+/g,' ').trim();
+const slFile=(cv,name)=>new Promise((ok,ko)=>cv.toBlob(b=>b?ok(new File([b],name,{type:'image/png'})):ko(new Error('png')),'image/png'));
+$('#slPng').onclick=async()=>{const L=slList();if(!L.length)return;const [k,t]=L[SL.i],f=await slFile(drawSlide(k,SL.m,slOpt(),SL.imgs),`${slBase()} - ${t}.png`);if(!await saveFile(f.name,f))toast('No se pudo guardar la imagen en este entorno.')};
+$('#slShare').onclick=async()=>{const L=slList();if(!L.length)return;const files=[];for(const [k,t] of L)files.push(await slFile(drawSlide(k,SL.m,slOpt(),SL.imgs),`${slBase()} - ${t}.png`));
+  if(!window.claude&&navigator.canShare&&navigator.canShare({files})){try{await navigator.share({files,title:`${slBase()}`});return}catch(e){if(e&&e.name==='AbortError')return}}
+  toast('Desde aquí no se pueden compartir imágenes directamente: usa «Todas en PDF» o «Descargar esta imagen». En el móvil, con la app instalada, se abre WhatsApp.')};
+$('#slPdf').onclick=()=>withBusy($('#slPdf'),'Generando PDF…',async()=>{const L=slList();if(!L.length)return;const JP=await loadPDF(),[w,h]=FMT[slOpt().fmt],pw=w/4,ph=h/4,ori=w>h?'l':'p',doc=new JP({unit:'mm',format:[pw,ph],orientation:ori});
+  L.forEach(([k],i)=>{if(i)doc.addPage([pw,ph],ori);doc.addImage(drawSlide(k,SL.m,slOpt(),SL.imgs).toDataURL('image/jpeg',.92),'JPEG',0,0,pw,ph)});
+  if(!await saveFile(slBase()+'.pdf',doc.output('blob')))toast('No se pudo guardar el PDF en este entorno.')});
+
+/* partido: alta y edición */
+let mEd=null;
+function openM(id){mEd=id?TM.matches.find(m=>m.id===id):null;const m=mEd||{j:'',date:'',time:'',home:true,rival:'',field:'',gf:'',ga:''};
+  if(!mEd){const js=TM.matches.map(x=>+x.j||0);m.j=String(Math.min(99,Math.max(0,...js)+1))}
+  $('#mT').textContent=mEd?'Editar partido':'Nuevo partido';$('#mJ').value=m.j;$('#mDate').value=m.date;$('#mTime').value=m.time;$('#mHome').value=m.home?'1':'0';$('#mRival').value=m.rival;$('#mField').value=m.field;$('#mGf').value=m.gf;$('#mGa').value=m.ga;
+  $('#mMeet').value=m.meet||'';$('#mMeetP').value=m.meetPlace||'';$('#mDepD').value=m.depDate||'';$('#mDep').value=m.dep||'';$('#mAddr').value=m.addr||'';$('#mKit').value=m.kit||'';$('#mInfo').value=m.info||'';mLogoTmp=m.rlogo||'';showLogo('#mLogoP','#mLogoX',mLogoTmp);
+  $('#mDel').hidden=!mEd;$('#mDlg').hidden=false;$('#mRival').focus()}
+$('#mAdd').onclick=()=>openM(null);$('#mCancel').onclick=()=>{$('#mDlg').hidden=true};
+$('#mSave').onclick=()=>{const g=v=>v.replace(/\D/g,'').slice(0,2),m=mEd||{id:mid(),lu:null};
+  Object.assign(m,{j:g($('#mJ').value),date:$('#mDate').value,time:$('#mTime').value,home:$('#mHome').value==='1',rival:$('#mRival').value.trim().slice(0,60),field:$('#mField').value.trim().slice(0,60),gf:g($('#mGf').value),ga:g($('#mGa').value),
+    meet:$('#mMeet').value,meetPlace:$('#mMeetP').value.trim().slice(0,80),depDate:$('#mDepD').value,dep:$('#mDep').value,addr:$('#mAddr').value.trim().slice(0,120),kit:$('#mKit').value.trim().slice(0,60),info:$('#mInfo').value.trim().slice(0,400),rlogo:mLogoTmp});
+  if(!m.rival)return toast('Escribe el nombre del rival.');if(!mEd)TM.matches.push(m);saveTM();renderTeam();$('#mDlg').hidden=true};
+$('#mDel').onclick=async()=>{const m=mEd;$('#mDlg').hidden=true;if(!m)return;if(!await ask(`¿Eliminar el partido contra «${m.rival}»?`,'Eliminar')){$('#mDlg').hidden=false;return}TM.matches=TM.matches.filter(x=>x!==m);saveTM();renderTeam()};
+/* lector de calendario pegado */
+function parseCal(txt,team){
+  const reJ=/jornada\s*(?:n[ºo°.]?\s*)?(\d{1,2})/i,reD=/(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{2,4})/,reT=/\b([01]?\d|2[0-3])[:h.]([0-5]\d)\b/,reS=/^(\d{1,2})\s*[-–:]\s*(\d{1,2})$/;
+  const isName=t=>/[a-záéíóúüñ]{3}/i.test(t)&&t.length<=70&&!reJ.test(t)&&!/^(local|visitante|resultado|fecha|hora|campo|jornada|calendario|clasificaci[oó]n)$/i.test(t.trim());
+  const out=[];let j=null,date='',time='',pa=null,ps=null;
+  const push=(a,b,ga,gb,ld,lt)=>{out.push({j,date:ld||date,time:lt||time,a:a.trim(),b:b.trim(),ga:ga||'',gb:gb||''});pa=ps=null};
+  for(let raw of String(txt).split(/\r?\n/)){
+    const l=raw.replace(/\u00a0/g,' ').trim();if(!l)continue;
+    const mj=reJ.exec(l);if(mj){j=+mj[1];pa=ps=null}
+    const md=reD.exec(l);const ld=md?`${md[3].length===2?'20'+md[3]:md[3]}-${md[2].padStart(2,'0')}-${md[1].padStart(2,'0')}`:'';
+    const lw=l.replace(reD,' ');const mt=reT.exec(lw);const lt=mt?`${mt[1].padStart(2,'0')}:${mt[2]}`:'';
+    const rest=lw.replace(reT,' ').replace(reJ,' ');
+    let cells=raw.split(/\t+/).map(c=>c.replace(reD,' ').replace(reT,' ').replace(reJ,' ').trim()).filter(Boolean);
+    if(cells.length>=3){
+      const si=cells.findIndex((c,i)=>i>0&&i<cells.length-1&&(reS.test(c)||/^[-–]$|^vs\.?$/i.test(c)));
+      if(/^\d{1,2}$/.test(cells[0]))j=+cells[0];
+      if(si>0&&isName(cells[si-1])&&isName(cells[si+1])){const sm=reS.exec(cells[si]);push(cells[si-1],cells[si+1],sm&&sm[1],sm&&sm[2],ld,lt);continue}
+      const nm=cells.filter(isName);if(nm.length===2){push(nm[0],nm[1],'','',ld,lt);continue}
+    }
+    const r=rest.replace(/\s+/g,' ').trim();
+    let m=/^(.*[a-záéíóúüñ.)].*?)\s+(\d{1,2})\s*[-–]\s*(\d{1,2})\s+(.*[a-záéíóúüñ].*)$/i.exec(r);
+    if(m&&isName(m[1])&&isName(m[4])){push(m[1],m[4],m[2],m[3],ld,lt);continue}
+    const parts=r.split(/\s+[-–]\s+|\s+vs\.?\s+/i).map(x=>x.trim()).filter(Boolean);
+    if(parts.length===2&&isName(parts[0])&&isName(parts[1])){push(parts[0],parts[1],'','',ld,lt);continue}
+    const sm=reS.exec(r);
+    if(sm&&pa){ps=[sm[1],sm[2]];continue}
+    if(/^[-–]$|^vs\.?$/i.test(r)&&pa){ps=['',''];continue}
+    if(isName(r)&&!ld&&!lt&&r.split(' ').length<=7){if(pa&&ps){push(pa,r,ps[0],ps[1]);continue}pa=r;continue}
+    if(ld)date=ld;if(lt)time=lt;
+  }
+  let me=nrm(team);
+  if(!me){const c={};out.forEach(x=>{for(const t of [x.a,x.b]){const k=nrm(t);c[k]=(c[k]||0)+1}});me=Object.keys(c).sort((p,q)=>c[q]-c[p])[0]||''}
+  const mine=t=>{const k=nrm(t);return !!me&&(k===me||k.includes(me)||me.includes(k)&&k.length>4)};
+  const res=[],seen=new Set();
+  for(const x of out){const h=mine(x.a),v=mine(x.b);if(h===v)continue;const key=(x.j??'')+'|'+x.date+'|'+nrm(h?x.b:x.a);if(seen.has(key))continue;seen.add(key);
+    res.push({j:x.j!=null?String(x.j):'',date:x.date,time:x.time,home:h,rival:(h?x.b:x.a).slice(0,60),gf:h?x.ga:x.gb,ga:h?x.gb:x.ga,field:''})}
+  return{me,list:res};
+}
+let impRes=null;
+$('#calImp').onclick=()=>{$('#impTeam').value=TM.team;$('#impTxt').value='';$('#impPrev').innerHTML='';$('#impInfo').textContent='';$('#impOk').disabled=true;impRes=null;$('#impDlg').hidden=false;$('#impTxt').focus()};
+$('#impCancel').onclick=()=>{$('#impDlg').hidden=true};
+$('#impGo').onclick=()=>{const t=$('#impTxt').value;if(!t.trim())return toast('Pega primero el calendario.');impRes=parseCal(t,$('#impTeam').value);
+  const L=impRes.list;$('#impInfo').textContent=L.length?`${L.length} partidos encontrados${$('#impTeam').value.trim()?'':' (equipo detectado: '+impRes.me+')'}.`:'No he reconocido partidos. Revisa el nombre de tu equipo o mándame un trozo del texto para ajustar el lector.';
+  $('#impPrev').innerHTML=L.length?`<table class="imprev"><tbody>${L.map(m=>`<tr><td>${m.j?'J'+esc(m.j):''}</td><td>${esc([fmtD(m.date),m.time].filter(Boolean).join(' · '))}</td><td>${m.home?'Casa':'Fuera'}</td><td><b>${esc(m.rival)}</b></td><td>${m.gf!==''?esc(m.gf+' – '+m.ga):''}</td></tr>`).join('')}</tbody></table>`:'';
+  $('#impOk').disabled=!L.length};
+$('#impOk').onclick=()=>{if(!impRes)return;const nm=$('#impTeam').value.trim();if(nm&&!TM.team)TM.team=nm.slice(0,60);let add=0,upd=0;
+  for(const n of impRes.list){const ex=TM.matches.find(m=>(n.j&&m.j===n.j)||(!n.j&&m.date===n.date&&nrm(m.rival)===nrm(n.rival)));
+    if(ex){Object.assign(ex,{j:n.j||ex.j,date:n.date||ex.date,time:n.time||ex.time,home:n.home,rival:n.rival,gf:n.gf,ga:n.ga});upd++}else{TM.matches.push({id:mid(),...n,lu:null});add++}}
+  TM=cleanTM(TM);saveTM();renderTeam();$('#impDlg').hidden=true;toast(`Calendario importado: ${add} nuevos, ${upd} actualizados.`)};
+/* alineación */
+let luM=null;
+function slots(form){const L=form.split('-').map(Number);return['POR',...L.flatMap((c,i)=>Array(c).fill(i===0?'DEF':i===L.length-1?'DEL':'MED'))]}
+function openLU(id){luM=TM.matches.find(m=>m.id===id);if(!luM)return;
+  if(!luM.lu){const t=SIZE[S.pitch]===7?'f7':SIZE[S.pitch]===5?'sala':'f11';luM.lu=cleanLU({type:t,form:S.teams.home.form,pl:[]});const r=getR().find(x=>x.id===$('#rSel').value)||getR()[0];if(r){luM.lu.roster=r.id;luM.lu.pl=r.players.map(p=>({n:p.n,name:p.name,st:p.tit?'t':'s'}))}}
+  $('#luT').textContent=`Alineación${luM.j?' · Jornada '+luM.j:''}`;$('#luSub').textContent=[vsTxt(luM),[fmtD(luM.date,true),luM.time].filter(Boolean).join(', ')].filter(Boolean).join(' · ');
+  const rs=getR();$('#luRoster').innerHTML=rs.length?rs.map(r=>`<option value="${esc(r.id)}">${esc(r.name)}</option>`).join(''):'<option value="">Sin plantillas (créalas en Campo)</option>';if(luM.lu.roster)$('#luRoster').value=luM.lu.roster;$('#luFromR').disabled=!rs.length;
+  $('#luType').value=luM.lu.type;luForms();$('#luNotes').value=luM.lu.notes;luRows();$('#luDlg').hidden=false}
+function luForms(){const fl=FORMS[SIZE[luM.lu.type]];if(!fl.includes(luM.lu.form))luM.lu.form=fl[Math.min(1,fl.length-1)];$('#luForm').innerHTML=fl.map(f=>`<option>${f}</option>`).join('');$('#luForm').value=luM.lu.form}
+function luRows(){
+  const P=luM.lu.pl,rank={t:0,s:1,'':2},ord=P.map((p,i)=>i).sort((a,b)=>rank[P[a].st]-rank[P[b].st]||a-b),sl=slots(luM.lu.form);let k=0;
+  $('#luRows').innerHTML=ord.length?ord.map(i=>{const p=P[i],lab=p.st==='t'?(sl[k++]||'+'):'';return `<div class="rrow" data-i="${i}"><b class="slot">${lab}</b><input type="text" inputmode="numeric" maxlength="2" data-f="n" aria-label="Dorsal" placeholder="Nº"><input type="text" maxlength="18" data-f="name" aria-label="Nombre" placeholder="Nombre"><span class="luSt">${[['t','Titular'],['s','Suplente'],['','No conv.']].map(([v,t])=>`<button data-st="${v}" aria-pressed="${p.st===v}">${t}</button>`).join('')}</span><span class="row" style="gap:4px"><button data-m="up" aria-label="Subir">↑</button><button data-m="down" aria-label="Bajar">↓</button><button data-m="x" class="danger" aria-label="Quitar">✕</button></span></div>`}).join(''):'<p class="hint">Carga una plantilla o añade jugadores.</p>';
+  $$('#luRows .rrow').forEach(r=>{const p=P[+r.dataset.i];r.querySelector('[data-f=n]').value=p.n;r.querySelector('[data-f=name]').value=p.name});
+  const nt=P.filter(p=>p.st==='t').length,ns=P.filter(p=>p.st==='s').length,need=SIZE[luM.lu.type];
+  $('#luInfo').textContent=`Titulares ${nt}/${need} · Suplentes ${ns}. Ordena los titulares de portería a delantera y, en cada línea, de banda izquierda a banda derecha.`+(nt>need?' Sobran titulares.':'');saveTM();
+}
+$('#luRows').addEventListener('input',e=>{const r=e.target.closest('.rrow');if(!r)return;const p=luM.lu.pl[+r.dataset.i],f=e.target.dataset.f;if(f==='n'){e.target.value=e.target.value.replace(/\D/g,'');p.n=e.target.value}else if(f==='name')p.name=e.target.value.slice(0,18);saveTM()});
+$('#luRows').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const r=b.closest('.rrow'),i=+r.dataset.i,P=luM.lu.pl;
+  if(b.dataset.st!=null){const p=P.splice(i,1)[0];p.st=b.dataset.st;let at=P.length;for(let k=P.length-1;k>=0;k--){if(P[k].st===p.st){at=k+1;break}}P.splice(at,0,p)}
+  else if(b.dataset.m==='x')P.splice(i,1);
+  else if(b.dataset.m){const st=P[i].st,dir=b.dataset.m==='up'?-1:1;let k=i+dir;while(k>=0&&k<P.length&&P[k].st!==st)k+=dir;if(k<0||k>=P.length)return;[P[i],P[k]]=[P[k],P[i]]}
+  luRows()});
+$('#luType').onchange=e=>{luM.lu.type=e.target.value;luForms();luRows()};$('#luForm').onchange=e=>{luM.lu.form=e.target.value;luRows()};
+$('#luNotes').oninput=e=>{luM.lu.notes=e.target.value.slice(0,1200);saveTM()};
+$('#luFromR').onclick=async()=>{const r=getR().find(x=>x.id===$('#luRoster').value);if(!r)return;if(luM.lu.pl.length&&!await ask('¿Sustituir la convocatoria por la plantilla?','Sustituir'))return;luM.lu.roster=r.id;luM.lu.pl=r.players.map(p=>({n:p.n,name:p.name,st:p.tit?'t':'s'}));luRows()};
+$('#luFromF').onclick=()=>{const pls=S.items.filter(i=>i.k==='pl'&&i.team==='home');if(!pls.length)return toast('No hay jugadores del local en el campo.');luM.lu.pl=[...pls.filter(p=>p.gk),...pls.filter(p=>!p.gk)].map(p=>({n:p.n,name:p.name,st:'t'}));luRows()};
+$('#luAdd').onclick=()=>{const ns=luM.lu.pl.map(p=>+p.n||0);luM.lu.pl.push({n:String(Math.min(99,Math.max(0,...ns)+1)),name:'',st:luM.lu.pl.filter(p=>p.st==='t').length<SIZE[luM.lu.type]?'t':'s'});luRows()};
+$('#luClose').onclick=()=>{$('#luDlg').hidden=true;renderTeam()};
+function buildLineup(m){
+  const lu=m.lu,st={v:2,pitch:lu.type,view:'full',orient:S.orient,ps:S.ps,nid:1,teams:{home:{name:teamName().slice(0,24),color:S.teams.home.color,form:lu.form},away:{name:(m.rival||'Rival').slice(0,24),color:S.teams.away.color,form:''}},
+    items:[],draws:[],frames:[],fnotes:[],cf:-1,labels:true,t3d:false,tilt:S.tilt,autoF:true,autoNum:false,sheet:{cat:'Partido',title:`Alineación${m.j?' · Jornada '+m.j:''}`,obj:vsTxt(m),desc:lu.notes}};
+  const keep=S;S=clean(st);placeTeam('home');const T0=lu.pl.filter(p=>p.st==='t'),gk=T0.slice(0,1),pls=S.items.filter(i=>i.k==='pl'&&i.team==='home');
+  pls.forEach((p,i)=>{const t=T0[i];p.n=t?String(t.n||'').slice(0,2):String(i+1);p.name=t?String(t.name||'').slice(0,18):''});
+  S.items.push({id:nid(),k:'ball',x:525,y:340,r:0,s:1});const out=S;S=keep;return out;
+}
+$('#luBoard').onclick=()=>{if(!luM||busy)return;if(pres)presClose();if(playing)togglePlay();snap();S=buildLineup(luM);selI=selD=null;clearGrp();zoom.z=1;$('#pName').value=`Alineación J${luM.j||''} ${luM.rival||''}`.trim().slice(0,40);afterLoad();$('#luDlg').hidden=true;
+  toast('Alineación en la pizarra. Puedes moverla, presentarla o exportarla; Deshacer vuelve a lo anterior.')};
+$('#luPdf').onclick=()=>withBusy($('#luPdf'),'Generando PDF…',async()=>{
+  const m=luM,lu=m.lu,JP=await loadPDF(),cap=await captureState(buildLineup(m),false),doc=new JP({unit:'mm',format:'a4'}),c=pdfCtx(doc),d=doc;
+  band(c,`Alineación${m.j?' · Jornada '+m.j:''}`,[vsTxt(m),[fmtD(m.date,true),m.time].filter(Boolean).join(', '),m.field].filter(Boolean).join(' · '));
+  let iw=c.CW,ih=iw*cap.ratio;if(ih>125){ih=125;iw=ih/cap.ratio}const ix=c.M+(c.CW-iw)/2;d.addImage(cap.main,'JPEG',ix,c.y,iw,ih);d.setDrawColor(210,214,208);d.setLineWidth(.3);d.rect(ix,c.y,iw,ih);c.y+=ih+9;
+  const T0=lu.pl.filter(p=>p.st==='t'),S0=lu.pl.filter(p=>p.st==='s'),sl=slots(lu.form),y0=c.y,colW=c.CW/2-4;
+  const list=(title,arr,x,lab)=>{let y=y0;d.setFont('helvetica','bold');d.setFontSize(12);d.setTextColor(...GREEN);d.text(T(`${title} (${arr.length})`),x,y);d.setDrawColor(...GREEN);d.setLineWidth(.4);d.line(x,y+1.8,x+colW,y+1.8);y+=8;
+    arr.forEach((p,i)=>{d.setFont('helvetica','bold');d.setFontSize(10);d.setTextColor(...MUTE);if(lab)d.text(T(lab[i]||''),x,y);d.setTextColor(...INK);d.setFontSize(11);d.text(T(p.n||'–'),x+(lab?13:0),y);d.setFont('helvetica','normal');d.text(T(p.name||''),x+(lab?22:9),y);y+=6.2});return y};
+  const ya=list('Titulares',T0,c.M,sl),yb=list('Suplentes',S0,c.M+c.CW/2+4,null);c.y=Math.max(ya,yb)+4;
+  if(lu.notes){heading(c,'Consignas');para(c,lu.notes)}
+  footer(doc,`${teamName()}${m.j?' · Jornada '+m.j:''}`);
+  if(!await saveFile(pdfName(`Alineacion J${m.j||''} ${m.rival||''}`),doc.output('blob')))toast('No se pudo guardar el PDF en este entorno.');
+});
+
 /* ---------- Novedades ---------- */
-const NEWS=['<b>Biblioteca ampliada a 17 ejercicios</b>, ordenados por categorías: calentamiento, técnica, táctica, físico, porteros, balón parado y juego reducido.','<b>Nuevos:</b> pases por parejas con movilidad, circuito de coordinación, velocidad de reacción, intermitente 15 – 15, agilidad en T, rueda de pases en Y, 1 contra 1, pared y finalización, portero, partido 4 contra 4 y falta lateral.','<b>Campo «Tipo»</b> en la ficha del ejercicio, que sale en el PDF y en el plan de la sesión.','<b>De la 1.1.0:</b> modo presentación, notas por fotograma, flechas numeradas, ficha y sesión en PDF.'];
-const NEWS_OLD=['<b>Pestaña Ejercicio:</b> datos del ejercicio y ficha en PDF con la secuencia de fotogramas y sus notas.','<b>Sesión de entrenamiento en PDF</b> con portada y plan, a partir de tus jugadas guardadas.','<b>Biblioteca de ejercicios:</b> rondo, posesión, salida de balón, córner, presión tras pérdida y centro y remate.','<b>Modo presentación</b> a pantalla completa: avanza con las flechas, Espacio o tocando la pantalla.','<b>Notas por fotograma</b>, visibles al reproducir, al presentar, en la imagen y en el vídeo.','<b>Flechas numeradas:</b> a mano en la pestaña Ficha, en grupo o automáticamente con el botón Numerar (tecla N).'];
-function showNews(){$('#newsVer').textContent=APP_VERSION;$('#newsList').innerHTML=NEWS.map(t=>`<li>${t}</li>`).join('');$('#newsDlg').hidden=false;$('#newsClose').focus()}
+const CHANGELOG=[
+ {v:'1.3.0',t:'Partidos, alineación y diapositivas',it:[
+  '<b>Pestaña Partidos:</b> próximo partido destacado, pendientes y jugados con su resultado, y enlace a la página de tu equipo en la web de la federación.',
+  '<b>Pegar calendario:</b> copia el calendario de la federación y la pizarra reconoce jornadas, fechas, rivales, local o visitante y resultados.',
+  '<b>Alineación de la jornada:</b> convocatoria desde la plantilla (titulares, suplentes, no convocados), sistema, puesto de cada titular, consignas, verla en la pizarra y PDF para el vestuario.',
+  '<b>Diapositivas del partido</b> para WhatsApp: día de partido, convocatoria, citación, alineación y cuerpo técnico. Tres diseños y tres formatos; compartir, imagen o PDF.',
+  '<b>Datos del club:</b> competición, escudo y cuerpo técnico con cargo, nombre y teléfono.',
+  '<b>Citación y viaje</b> en cada partido: quedada, salida, dirección del campo, equipación, observaciones y escudo del rival.',
+  '<b>Versión visible en el campo</b> y este historial de novedades.']},
+ {v:'1.2.0',t:'Biblioteca ampliada',it:[
+  '<b>17 ejercicios</b> por categorías: calentamiento, técnica, táctica, físico, porteros, balón parado y juego reducido.',
+  'Nuevos: pases por parejas con movilidad, circuito de coordinación, velocidad de reacción, intermitente 15 – 15, agilidad en T, rueda de pases en Y, 1 contra 1, pared y finalización, portero, partido 4 contra 4 y falta lateral.',
+  '<b>Filtro por categoría</b> en la biblioteca y campo <b>«Tipo»</b> en la ficha del ejercicio.',
+  'Conos, picas, banderines y maniquíes se ven siempre de pie, también con el campo en vertical.']},
+ {v:'1.1.0',t:'Explicar jugadas y preparar entrenamientos',it:[
+  '<b>Modo presentación</b> a pantalla completa: avanza con las flechas, Espacio o tocando la pantalla.',
+  '<b>Notas por fotograma</b>, visibles al reproducir, al presentar y en la imagen y el vídeo.',
+  '<b>Flechas numeradas:</b> automáticas con el botón Numerar (tecla N), a mano o en grupo.',
+  '<b>Pestaña Ejercicio:</b> datos del ejercicio y ficha en PDF con la secuencia de fotogramas.',
+  '<b>Sesión de entrenamiento en PDF</b> con portada, plan y una ficha por ejercicio.',
+  '<b>Biblioteca de ejercicios</b> con los primeros seis: rondo, posesión, salida de balón, córner, presión tras pérdida y centro y remate.',
+  'La orientación automática elige la posición en la que el campo se ve más grande.']},
+ {v:'1.0.0',t:'Primera versión publicada',it:[
+  '<b>Campos:</b> fútbol 11, fútbol 7, sala, cuadro de posesión, pizarra lisa y en blanco; campo entero o medio campo; horizontal o vertical; vista 3D.',
+  '<b>Equipos:</b> formaciones para 11, 7 y 5 jugadores, colores, nombres, petos, porteros y plantillas.',
+  '<b>Material:</b> balones, conos, platos, picas, vallas, aros, escalera, maniquí, banderín, rebotador, porterías y entrenador.',
+  '<b>Dibujo:</b> desmarque, pase, conducción, flecha curva, zonas, conexiones entre jugadores y texto.',
+  '<b>Edición:</b> selección múltiple, alinear y repartir, girar y cambiar el tamaño (botón derecho, rueda o dos dedos), bloquear, duplicar, deshacer y rehacer.',
+  '<b>Zoom</b> con pellizco, rueda o teclas + y −.',
+  '<b>Animación por fotogramas:</b> cada flecha aparece en su momento; exportación a vídeo.',
+  '<b>Compartir:</b> jugada por enlace, imagen PNG y copia de seguridad en archivo.',
+  '<b>App instalable</b> que funciona sin conexión en PC, Android, iPhone y iPad.']}
+];
+function showNews(){$('#newsVer').textContent=APP_VERSION;$('#newsList').innerHTML=CHANGELOG.map(c=>`<details${c.v===APP_VERSION?' open':''}><summary>${c.v}${c.v===APP_VERSION?' · actual':''}<small>${c.t}</small></summary><ul>${c.it.map(t=>`<li>${t}</li>`).join('')}</ul></details>`).join('');$('#newsDlg').hidden=false;$('#newsDlg').firstElementChild.scrollTop=0;$('#newsClose').focus({preventScroll:true})}
 $('#newsClose').onclick=()=>{$('#newsDlg').hidden=true};$('#newsBtn').onclick=showNews;
 $('#newsDlg').onclick=e=>{if(e.target.id==='newsDlg')$('#newsDlg').hidden=true};
-$('#appVer').textContent=APP_VERSION;
+$('#appVer').textContent=APP_VERSION;$('#verTxt').textContent='v'+APP_VERSION;$('#verBtn').onclick=showNews;
 
 /* ---------- Diálogos ---------- */
 function ask(msg,ok){return new Promise(res=>{const m=$('#modal');$('#mMsg').textContent=msg;$('#mOk').textContent=ok||'Aceptar';m.hidden=false;$('#mOk').focus();
@@ -1540,7 +1949,7 @@ let tT;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on
 try{S=clean(JSON.parse(localStorage.getItem(KEY)))}catch(e){S=null}
 const hadData=!!S;
 if(!S){fresh();S.draws=[{id:nid(),type:'dash',color:'#ffd60a',bend:1,pts:[{x:283,y:510},{x:420,y:600}]},{id:nid(),type:'run',color:'#ffffff',bend:1,pts:[{x:420,y:600},{x:500,y:590},{x:580,y:560},{x:650,y:530}]},{id:nid(),type:'zone',color:'#4cc9f0',bend:1,pts:[{x:760,y:150},{x:900,y:400}]}]}
-gP.innerHTML=pitchSVG();renderAll();syncControls();updUndo();renderProjects();renderRosters();checkHash();
+gP.innerHTML=pitchSVG();renderAll();syncControls();updUndo();renderProjects();renderRosters();renderTeam();renderClub();checkHash();
 {let seen=null;try{seen=localStorage.getItem(VKEY)}catch(e){}if(seen!==APP_VERSION){if(seen||hadData)setTimeout(showNews,700);try{localStorage.setItem(VKEY,APP_VERSION)}catch(e){}}}
 new ResizeObserver(()=>applyView()).observe(stage);
 SHEET.addEventListener('change',()=>{if(!SHEET.matches)panel.classList.remove('closed')});
